@@ -2,28 +2,39 @@ package Test;
 
 import javafx.application.Application;
 import javafx.event.*;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.scene.text.Font;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+
+class globals {
+    static String DEFAULTSTRING = "I AM ERROR";
+}
 
 public class Program extends Application {
 
     public void start(Stage stage) {
-        Text text = new Text(10,40, "Hello World");
+        /** Add stuff here */
+        Text text = new Text(0,0, globals.DEFAULTSTRING);
         text.setFont(new Font(40));
-        MyButton button = new MyButton("8==D");
-        button.relocate(10,10);
-        Scene scene = new Scene(new Group(text,button));
+        Rectangle2D bounds = new Rectangle2D(0,0,360,480);
+        Group grouped = new Group(text);
 
-        stage.setTitle("not so test");
+        /** Don't need to change these */
+        // Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        Scene scene = new Scene(new StackPane(grouped), bounds.getWidth(), bounds.getHeight());
         stage.setScene(scene);
-        stage.sizeToScene();
         stage.show();
         scene.setFill(Color.CORNFLOWERBLUE);
+
+        /** EventHandlers and their usage */
 
         class setText implements EventHandler<MouseEvent> {
             private String changeTo;
@@ -37,22 +48,8 @@ public class Program extends Application {
             }
         }
 
-        class ButtonAction implements EventHandler<MouseEvent> {
-            @Override
-            public void handle(MouseEvent event) {
-                if (button.getTimesClicked() < 10) {
-                    button.increment();
-                }
-                else {
-                    button.setText("Stop clicking me");
-                }
-            }
-        }
-        button.setOnMouseClicked(new ButtonAction());
-        scene.setOnMouseEntered(new setText("In Border"));
-        scene.setOnMouseExited(new setText("Out of Border"));
         scene.setOnMousePressed(new setText("Click"));
-        scene.setOnMouseReleased(new setText("Clack"));
+        scene.setOnMouseReleased(new setText(globals.DEFAULTSTRING));
     }
 
     public static void main(String[] args) {
