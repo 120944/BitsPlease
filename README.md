@@ -1,2 +1,2 @@
 # project 3 - Data
-Team name is a WIP
+Team name is no longer a WIP
