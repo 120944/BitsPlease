@@ -4,6 +4,10 @@ import java.sql.*;
 
 /**
  * Created by Michael on 6-4-2016.
+ * Connects to remote (or localhost) SQL database
+ *
+ * @ToDo
+ * Convert main to method, as this isn't supposed to be the entry point of the app..
  */
 
 public class connect_db_indice {

@@ -10,14 +10,15 @@ import javafx.stage.Stage;
 public class BitsPleaseApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        System.err.print("[Debug] - app has started");
         /*
         Main loop/program below.
          */
 
+
     }
 
-    public void Launch(String[] args) {
+    public static void main(String[] args) {
         Application.launch(args);
     }
 }
