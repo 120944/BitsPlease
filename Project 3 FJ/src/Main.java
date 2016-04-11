@@ -5,26 +5,27 @@ import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
 import com.lynden.gmapsfx.service.directions.DirectionsRequest;
 import com.lynden.gmapsfx.service.directions.TravelModes;
-import com.lynden.gmapsfx.service.geocoding.GeocodingService;
-import com.lynden.gmapsfx.shapes.MapShapeOptions;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.text.TextAlignment;
 import netscape.javascript.JSObject;
 
 //Directions
 import com.lynden.gmapsfx.javascript.object.DirectionsPane;
 import com.lynden.gmapsfx.service.directions.DirectionStatus;
-import com.lynden.gmapsfx.service.directions.DirectionsGeocodedWaypoint;
-import com.lynden.gmapsfx.service.directions.DirectionsLeg;
 import com.lynden.gmapsfx.service.directions.DirectionsRenderer;
-import com.lynden.gmapsfx.service.directions.DirectionsRequest;
 import com.lynden.gmapsfx.service.directions.DirectionsResult;
 import com.lynden.gmapsfx.service.directions.DirectionsService;
 import com.lynden.gmapsfx.service.directions.DirectionsServiceCallback;
-import com.lynden.gmapsfx.service.directions.DirectionsSteps;
 import com.lynden.gmapsfx.service.directions.DirectionsWaypoint;
 
 //JavaFX
@@ -42,9 +43,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javax.imageio.ImageIO;
-import javafx.scene.effect.GaussianBlur;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -58,12 +56,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 //ImageHandling
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.concurrent.SynchronousQueue;
 
 //GeoIP
 import com.maxmind.geoip.Location;
@@ -98,7 +93,6 @@ public class Main extends Application implements MapComponentInitializedListener
 
     public static void main(String args[]) throws MalformedURLException {
         staticMap = false;
-        map();
         launch();
     }
 
@@ -323,31 +317,31 @@ public class Main extends Application implements MapComponentInitializedListener
         return location;
     }
 
-    //Creates, initiates and draws the window and all of its elements
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Map View");
+    //Draws the Welcome-scene
+    public VBox getStartScene() {
+        VBox startView = new VBox();
+        startView.setPrefSize(width, height);
+        startView.setAlignment(Pos.CENTER);
 
-        //Creates VBox-layout and buttons
-        VBox vbox = new VBox(8);
-        vbox.setPadding(new Insets(0, 0, 0, 0));
+        Text startText = new Text();
+        startText.setText("Welcome!");
+        startText.setFont(Font.font("null", FontWeight.BOLD, 120));
 
-        Text t2 = new Text();
-        t2.setX(10.0f);
-        t2.setY(140.0f);
-        t2.setCache(true);
-        t2.setText("Gaussian Blur");
-        t2.setFill(Color.RED);
-        t2.setFont(Font.font("null", FontWeight.BOLD, 36));
-        t2.setEffect(new GaussianBlur());
+        Text startTextSub = new Text();
+        startTextSub.setText("Start using this application by selecting something from the menu in the topleft corner.");
+        startTextSub.setFont(Font.font("null", FontWeight.LIGHT, 30));
+        if(scene != null) { startTextSub.setWrappingWidth(startText.getWrappingWidth()); }
+        else { startTextSub.setWrappingWidth(width); }
+        startTextSub.setTextAlignment(TextAlignment.CENTER);
 
-        Rectangle r = new Rectangle();
-        r.setX(50);
-        r.setY(50);
-        r.setWidth(200);
-        r.setHeight(100);
-        r.setOpacity(0.5);
-        r.setEffect(new GaussianBlur());
+        startView.getChildren().addAll(startText, startTextSub);
+        return startView;
+    }
+
+    //Draws the Map-scene
+    public VBox getStat1Scene() {
+        map();
+        VBox mapViewVBox = new VBox(8);
 
         CheckBox staticMapBox = new CheckBox();
         staticMapBox.setText("Enable Static Maps");
@@ -355,13 +349,13 @@ public class Main extends Application implements MapComponentInitializedListener
             @Override
             public void handle(ActionEvent event) {
                 if(staticMap) { staticMap=false; }
-                if(!staticMap) { staticMap = true; }
+                else { staticMap = true; }
             }
         });
 
         if(staticMap) {
             //Sets up the buttons and labels
-            vbox.setPadding(new Insets(10, 10, 10, 10));
+            mapViewVBox.setPadding(new Insets(10, 10, 10, 10));
             Button zoomInButton = new Button();
             Button zoomOutButton = new Button();
             zoomInButton.setText("+");
@@ -380,7 +374,7 @@ public class Main extends Application implements MapComponentInitializedListener
             image2.setCache(true);
             if (scene != null) { image2.setViewport(new Rectangle2D(0, 0, scene.getWidth(), scene.getHeight())); }
             image2.setImage(mapImage);
-            vbox.getChildren().addAll(staticMapBox, zoomInButton, zoomOutButton, originLabel, destinationLabel, image2);
+            mapViewVBox.getChildren().addAll(staticMapBox, zoomInButton, zoomOutButton, originLabel, destinationLabel, image2);
 
             //Zooms the ImageMapView in
             zoomInButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -407,14 +401,9 @@ public class Main extends Application implements MapComponentInitializedListener
             mapView = new GoogleMapView();
             mapView.addMapInializedListener(this);
             mapView.setPrefSize(width, height);
-            vbox.setAlignment(Pos.CENTER);
-            vbox.getChildren().addAll(staticMapBox, mapView);
+            mapViewVBox.setAlignment(Pos.CENTER);
+            mapViewVBox.getChildren().addAll(staticMapBox, mapView);
         }
-
-        //Creates and instantiates the scene
-        scene = new Scene(vbox, width, height);
-        primaryStage.setScene(scene);
-
         //Listeners for screen resize events
         if(staticMap) {
             scene.widthProperty().addListener(new ChangeListener<Number>() {
@@ -439,7 +428,9 @@ public class Main extends Application implements MapComponentInitializedListener
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldSceneWidth, Number newSceneWidth) {
                     if ((Double) newSceneWidth > scene.heightProperty().getValue()) {
-                        mapView.setPrefWidth((Double) newSceneWidth);
+                        System.out.println("Changed Width!" + oldSceneWidth + newSceneWidth);
+                        mapView.setPrefSize((Double) newSceneWidth, height);
+                        mapViewVBox.getChildren().addAll(staticMapBox, mapView);
                     }
                 }
             });
@@ -447,11 +438,83 @@ public class Main extends Application implements MapComponentInitializedListener
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldSceneHeight, Number newSceneHeight) {
                     if ((Double) newSceneHeight > scene.widthProperty().getValue()) {
-                        mapView.setPrefHeight((Double) newSceneHeight);
+                        System.out.println("Changed Height! " + oldSceneHeight + " , " + newSceneHeight);
+                        mapView.setPrefSize(width, (Double) newSceneHeight);
+                        mapViewVBox.getChildren().addAll(staticMapBox, mapView);
                     }
                 }
             });
         }
+        return mapViewVBox;
+    }
+
+    //Draws the Pie Chart-scene
+    public VBox getStat2Scene() {
+        VBox sceneView = new VBox();
+        sceneView.setPrefSize(width, height);
+
+        Text sceneText = new Text();
+        sceneText.setText("Behold, our magnificent pie chart!");
+        sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 50));
+
+        PieChart pieChart = new PieChart();
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        pieChartData.addAll(
+                new PieChart.Data("Star Wars", 99.9),
+                new PieChart.Data("Batman", 78.56));
+        pieChart.setData(pieChartData);
+        sceneView.getChildren().addAll(sceneText, pieChart);
+        return sceneView;
+    }
+
+    //Creates, initiates and draws the window and all of its elements
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Statistics");
+        width = 1000;
+        height = 800;
+        BorderPane borderPane = new BorderPane();
+
+        //Creates HBox-menubar layout and buttons
+        MenuBar menuBar = new MenuBar();
+        Menu statistics = new Menu("Statistiscs");
+        MenuItem start = new MenuItem("Start");
+        MenuItem stat1 = new MenuItem("Map Stats");
+        MenuItem stat2 = new MenuItem("Graph");
+        MenuItem stat3 = new MenuItem("Statistic 3");
+        MenuItem stat4 = new MenuItem("Statistic 4");
+        MenuItem stat5 = new MenuItem("Statistic 5");
+        statistics.getItems().addAll(start, stat1,stat2,stat3,stat4,stat5);
+        menuBar.getMenus().addAll(statistics);
+        borderPane.setTop(menuBar);
+        borderPane.setCenter(getStartScene());
+
+        //Sets listeners for the menubar-buttons
+        start.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getStartScene());
+            }
+        });
+
+        stat1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getStat1Scene());
+            }
+        });
+
+        stat2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getStat2Scene());
+            }
+        });
+
+        //Creates and instantiates the scene
+        scene = new Scene(borderPane, width, height);
+        scene.setRoot(borderPane);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }
