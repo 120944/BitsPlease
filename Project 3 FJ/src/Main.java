@@ -5,19 +5,6 @@ import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
 import com.lynden.gmapsfx.service.directions.DirectionsRequest;
 import com.lynden.gmapsfx.service.directions.TravelModes;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
-import javafx.scene.chart.PieChart;
-import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.text.TextAlignment;
-import netscape.javascript.JSObject;
 
 //Directions
 import com.lynden.gmapsfx.javascript.object.DirectionsPane;
@@ -46,6 +33,18 @@ import javax.imageio.ImageIO;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
+import javafx.scene.chart.*;
+import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.text.TextAlignment;
 
 //JSON
 import org.apache.commons.io.IOUtils;
@@ -54,11 +53,13 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import netscape.javascript.JSObject;
 
 //ImageHandling
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
+import java.util.Arrays;
 
 //GeoIP
 import com.maxmind.geoip.Location;
@@ -328,7 +329,7 @@ public class Main extends Application implements MapComponentInitializedListener
         startText.setFont(Font.font("null", FontWeight.BOLD, 120));
 
         Text startTextSub = new Text();
-        startTextSub.setText("Start using this application by selecting something from the menu in the topleft corner.");
+        startTextSub.setText("Start using this application by selecting something from the menu.");
         startTextSub.setFont(Font.font("null", FontWeight.LIGHT, 30));
         if(scene != null) { startTextSub.setWrappingWidth(startText.getWrappingWidth()); }
         else { startTextSub.setWrappingWidth(width); }
@@ -338,13 +339,38 @@ public class Main extends Application implements MapComponentInitializedListener
         return startView;
     }
 
-    //Draws the Map-scene
-    public VBox getStat1Scene() {
-        map();
-        VBox mapViewVBox = new VBox(8);
+    //Draws the Help-scene
+    public VBox getHelpScene() {
+        VBox sceneView = new VBox();
+
+        Text sceneText = new Text();
+        sceneText.setText("Help");
+        sceneText.setFont(Font.font("null", FontWeight.LIGHT, 40));
+
+        Text sceneTextSub = new Text();
+        sceneTextSub.setText("You can view the different graphical representations of our data using the Statistics submenu in the menubar.");
+        sceneTextSub.setFont(Font.font("null", FontWeight.LIGHT, 12));
+        if(scene != null) { sceneTextSub.setWrappingWidth(sceneText.getWrappingWidth()); }
+        else { sceneTextSub.setWrappingWidth(width); }
+        sceneTextSub.setTextAlignment(TextAlignment.CENTER);
+
+        sceneView.getChildren().addAll(sceneText, sceneTextSub);
+        return sceneView;
+    }
+
+    //Draws the Preferences-scene
+    public VBox getPreferencesScene() {
+        VBox sceneView = new VBox();
+        sceneView.setPrefSize(width, height);
+//        startView.setAlignment(Pos.CENTER);
+
+        Text sceneText = new Text();
+        sceneText.setText("Preferences");
+        sceneText.setFont(Font.font("null", FontWeight.LIGHT, 40));
 
         CheckBox staticMapBox = new CheckBox();
         staticMapBox.setText("Enable Static Maps");
+        if(staticMap) { staticMapBox.setSelected(true); }
         staticMapBox.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -352,6 +378,34 @@ public class Main extends Application implements MapComponentInitializedListener
                 else { staticMap = true; }
             }
         });
+
+        sceneView.getChildren().addAll(sceneText, staticMapBox);
+        return sceneView;
+    }
+
+    public VBox getAboutScene() {
+        VBox sceneView = new VBox();
+        sceneView.setAlignment(Pos.CENTER);
+
+        Text sceneText = new Text();
+        sceneText.setText("Copyright© BitsPlease 2016");
+        sceneText.setFont(Font.font("null", FontWeight.LIGHT, 50));
+
+        Text sceneTextSub = new Text();
+        sceneTextSub.setText("J.W. Taylor-Parkins, M. de Klein, L. Pekelharing, F.J. Willemsen");
+        sceneTextSub.setFont(Font.font("null", FontWeight.LIGHT, 30));
+        if(scene != null) { sceneTextSub.setWrappingWidth(sceneText.getWrappingWidth()); }
+        else { sceneTextSub.setWrappingWidth(width); }
+        sceneTextSub.setTextAlignment(TextAlignment.CENTER);
+
+        sceneView.getChildren().addAll(sceneText, sceneTextSub);
+        return sceneView;
+    }
+
+    //Draws the Map-scene
+    public VBox getStat1Scene() {
+        map();
+        VBox mapViewVBox = new VBox(8);
 
         if(staticMap) {
             //Sets up the buttons and labels
@@ -374,7 +428,7 @@ public class Main extends Application implements MapComponentInitializedListener
             image2.setCache(true);
             if (scene != null) { image2.setViewport(new Rectangle2D(0, 0, scene.getWidth(), scene.getHeight())); }
             image2.setImage(mapImage);
-            mapViewVBox.getChildren().addAll(staticMapBox, zoomInButton, zoomOutButton, originLabel, destinationLabel, image2);
+            mapViewVBox.getChildren().addAll(zoomInButton, zoomOutButton, originLabel, destinationLabel, image2);
 
             //Zooms the ImageMapView in
             zoomInButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -402,7 +456,7 @@ public class Main extends Application implements MapComponentInitializedListener
             mapView.addMapInializedListener(this);
             mapView.setPrefSize(width, height);
             mapViewVBox.setAlignment(Pos.CENTER);
-            mapViewVBox.getChildren().addAll(staticMapBox, mapView);
+            mapViewVBox.getChildren().addAll(mapView);
         }
         //Listeners for screen resize events
         if(staticMap) {
@@ -428,9 +482,7 @@ public class Main extends Application implements MapComponentInitializedListener
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldSceneWidth, Number newSceneWidth) {
                     if ((Double) newSceneWidth > scene.heightProperty().getValue()) {
-                        System.out.println("Changed Width!" + oldSceneWidth + newSceneWidth);
                         mapView.setPrefSize((Double) newSceneWidth, height);
-                        mapViewVBox.getChildren().addAll(staticMapBox, mapView);
                     }
                 }
             });
@@ -438,9 +490,7 @@ public class Main extends Application implements MapComponentInitializedListener
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldSceneHeight, Number newSceneHeight) {
                     if ((Double) newSceneHeight > scene.widthProperty().getValue()) {
-                        System.out.println("Changed Height! " + oldSceneHeight + " , " + newSceneHeight);
                         mapView.setPrefSize(width, (Double) newSceneHeight);
-                        mapViewVBox.getChildren().addAll(staticMapBox, mapView);
                     }
                 }
             });
@@ -463,7 +513,155 @@ public class Main extends Application implements MapComponentInitializedListener
                 new PieChart.Data("Star Wars", 99.9),
                 new PieChart.Data("Batman", 78.56));
         pieChart.setData(pieChartData);
+        pieChart.setTitle("Awesome movies");
         sceneView.getChildren().addAll(sceneText, pieChart);
+        return sceneView;
+    }
+
+    //Draws the Area Chart-scene
+    public VBox getStat3Scene() {
+        VBox sceneView = new VBox();
+        sceneView.setPrefSize(width, height);
+
+        Text sceneText = new Text();
+        sceneText.setText("Wow, an area chart? You got to be kidding me!");
+        sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+        sceneText.setWrappingWidth(scene.getWidth());
+
+        CategoryAxis XAxis = new CategoryAxis();
+        NumberAxis YAxis = new NumberAxis();
+        XAxis.setLabel("Event");
+        YAxis.setLabel("Stress");
+
+        final AreaChart<String, Number> areaChart = new AreaChart(XAxis, YAxis);
+        areaChart.setTitle("Stress Graph: 0 = lowest, 100 = highest");
+        XYChart.Series csStudentSeries = new XYChart.Series();
+        XYChart.Series guineaPigs = new XYChart.Series();
+        csStudentSeries.setName("Stress among Computer Science students");
+        guineaPigs.setName("Stress among Guinea Pigs");
+
+        csStudentSeries.getData().addAll(
+                new XYChart.Data("Lectures", 10),
+                new XYChart.Data("Tests", 40),
+                new XYChart.Data("Project", 100),
+                new XYChart.Data("New Period", 0));
+
+        guineaPigs.getData().addAll(
+                new XYChart.Data("Lectures", 0),
+                new XYChart.Data("Tests", 100),
+                new XYChart.Data("Project", 0),
+                new XYChart.Data("New Period", 0));
+
+        areaChart.getData().addAll(csStudentSeries, guineaPigs);
+        sceneView.getChildren().addAll(sceneText, areaChart);
+        return sceneView;
+    }
+
+    //Draws the Barchart-scene
+    public VBox getStat4Scene() {
+        VBox sceneView = new VBox();
+
+        Text sceneText = new Text();
+        sceneText.setText("It's the Empire's bar chart. Foo Bar.");
+        sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+        sceneText.setWrappingWidth(scene.getWidth());
+
+        CategoryAxis XAxis = new CategoryAxis();
+        NumberAxis YAxis = new NumberAxis();
+        final BarChart<String, Number> barChart = new BarChart(XAxis, YAxis);
+        XAxis.setLabel("Event");
+        YAxis.setLabel("Stress");
+        barChart.setTitle("Sith Stuff. Because Sith rock.");
+
+        XYChart.Series deathStar = new XYChart.Series();
+        XYChart.Series deathStar2 = new XYChart.Series();
+        XYChart.Series starKillerBase = new XYChart.Series();
+        deathStar.setName("Death Star 1 costs");
+        deathStar2.setName("Death Star 2 costs");
+        starKillerBase.setName("Starkiller Base costs");
+
+        String item1 = "Armour";
+        String item2 = "Weaponry";
+        String item3 = "Supplies";
+        String item4 = "Personnel";
+
+        deathStar.getData().addAll(
+                new XYChart.Data(item1, 10),
+                new XYChart.Data(item2, 40),
+                new XYChart.Data(item3, 100),
+                new XYChart.Data(item4, 0));
+
+        deathStar2.getData().addAll(
+                new XYChart.Data(item1, 20),
+                new XYChart.Data(item2, 100),
+                new XYChart.Data(item3, 50),
+                new XYChart.Data(item4, -10));
+
+        starKillerBase.getData().addAll(
+                new XYChart.Data(item1, 60),
+                new XYChart.Data(item2, 150),
+                new XYChart.Data(item3, 10),
+                new XYChart.Data(item4, 10));
+
+        barChart.getData().addAll(deathStar, deathStar2, starKillerBase);
+        sceneView.getChildren().addAll(sceneText, barChart);
+        return sceneView;
+    }
+
+    //Draws the Stacked Barchart-scene
+    public VBox getStat5Scene() {
+        VBox sceneView = new VBox();
+
+        Text sceneText = new Text();
+        sceneText.setText("It's the Empire's stacked bar chart. Foo Bar.");
+        sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+        sceneText.setWrappingWidth(scene.getWidth());
+
+        String item1 = "Armour";
+        String item2 = "Weaponry";
+        String item3 = "Supplies";
+        String item4 = "Personnel";
+
+        CategoryAxis XAxis = new CategoryAxis();
+        NumberAxis YAxis = new NumberAxis();
+        final StackedBarChart<String, Number> barChart = new StackedBarChart(XAxis, YAxis);
+        barChart.setTitle("Sith Stuff. Because Sith rock.");
+        XAxis.setLabel("Event");
+        YAxis.setLabel("Stress");
+        XAxis.setCategories(FXCollections.observableArrayList(Arrays.asList(
+                item1,
+                item2,
+                item3,
+                item4
+        )));
+
+        XYChart.Series deathStar = new XYChart.Series();
+        XYChart.Series deathStar2 = new XYChart.Series();
+        XYChart.Series starKillerBase = new XYChart.Series();
+        deathStar.setName("Death Star 1 costs");
+        deathStar2.setName("Death Star 2 costs");
+        starKillerBase.setName("Starkiller Base costs");
+
+        deathStar.getData().addAll(
+                new XYChart.Data(item1, 10),
+                new XYChart.Data(item2, 40),
+                new XYChart.Data(item3, 100),
+                new XYChart.Data(item4, 0));
+
+        deathStar2.getData().addAll(
+                new XYChart.Data(item1, 20),
+                new XYChart.Data(item2, 100),
+                new XYChart.Data(item3, 50),
+                new XYChart.Data(item4, -10));
+
+        starKillerBase.getData().addAll(
+                new XYChart.Data(item1, 60),
+                new XYChart.Data(item2, 150),
+                new XYChart.Data(item3, 10),
+                new XYChart.Data(item4, 10));
+
+        barChart.getData().addAll(deathStar, deathStar2, starKillerBase);
+        sceneView.getChildren().addAll(sceneText, barChart);
         return sceneView;
     }
 
@@ -477,19 +675,57 @@ public class Main extends Application implements MapComponentInitializedListener
 
         //Creates HBox-menubar layout and buttons
         MenuBar menuBar = new MenuBar();
-        Menu statistics = new Menu("Statistiscs");
+        Menu general = new Menu("General");
+        Menu statistics = new Menu("Statistics");
+
+        MenuItem help = new MenuItem("Help");
+        MenuItem preferences = new MenuItem("Preferences");
+        MenuItem about = new MenuItem("About");
+        MenuItem quit = new MenuItem("Quit");
+
         MenuItem start = new MenuItem("Start");
         MenuItem stat1 = new MenuItem("Map Stats");
-        MenuItem stat2 = new MenuItem("Graph");
-        MenuItem stat3 = new MenuItem("Statistic 3");
-        MenuItem stat4 = new MenuItem("Statistic 4");
-        MenuItem stat5 = new MenuItem("Statistic 5");
+        MenuItem stat2 = new MenuItem("Pie Chart");
+        MenuItem stat3 = new MenuItem("Area Chart");
+        MenuItem stat4 = new MenuItem("Barchart");
+        MenuItem stat5 = new MenuItem("Stacked Barchart");
+
+        general.getItems().addAll(help, preferences, about, quit);
         statistics.getItems().addAll(start, stat1,stat2,stat3,stat4,stat5);
-        menuBar.getMenus().addAll(statistics);
+        menuBar.getMenus().addAll(general, statistics);
         borderPane.setTop(menuBar);
         borderPane.setCenter(getStartScene());
 
-        //Sets listeners for the menubar-buttons
+        //Sets listeners for the General menubar-buttons
+        help.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getHelpScene());
+            }
+        });
+
+        preferences.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getPreferencesScene());
+            }
+        });
+
+        about.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getAboutScene());
+            }
+        });
+
+        quit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.exit(0);
+            }
+        });
+
+        //Sets listeners for the Statistics menubar-buttons
         start.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -508,6 +744,27 @@ public class Main extends Application implements MapComponentInitializedListener
             @Override
             public void handle(ActionEvent event) {
                 borderPane.setCenter(getStat2Scene());
+            }
+        });
+
+        stat3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getStat3Scene());
+            }
+        });
+
+        stat4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getStat4Scene());
+            }
+        });
+
+        stat5.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                borderPane.setCenter(getStat5Scene());
             }
         });
 

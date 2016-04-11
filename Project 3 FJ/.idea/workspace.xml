@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1190e20-a05e-46f9-96a8-3704b2d52cde" name="Default" comment="" />
+    <list default="true" id="b1190e20-a05e-46f9-96a8-3704b2d52cde" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Project 3/json-simple-1.1.1.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project 3.iml" afterPath="$PROJECT_DIR$/Project 3.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+    </list>
     <ignored path="Project 3.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,16 +39,45 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7406061">
-              <caret line="328" column="42" selection-start-line="328" selection-start-column="42" selection-end-line="328" selection-end-column="42" />
+            <state vertical-scroll-proportion="1.0473815">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Main#0" expanded="false" />
                 <element signature="method#map#0;class#Main#0" expanded="false" />
                 <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
                 <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
                 <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
                 <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+                <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+                <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+                <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+                <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+                <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+                <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+                <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+                <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+                <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+                <element signature="method#start#0;class#Main#0" expanded="false" />
+                <element signature="e#29137#29138#0" expanded="true" />
+                <element signature="e#29205#29206#0" expanded="true" />
+                <element signature="e#29358#29359#0" expanded="true" />
+                <element signature="e#29433#29434#0" expanded="true" />
+                <element signature="e#29580#29581#0" expanded="true" />
+                <element signature="e#29649#29650#0" expanded="true" />
+                <element signature="e#29795#29796#0" expanded="true" />
+                <element signature="e#29841#29842#0" expanded="true" />
+                <element signature="e#30048#30049#0" expanded="true" />
+                <element signature="e#30117#30118#0" expanded="true" />
+                <element signature="e#30264#30265#0" expanded="true" />
+                <element signature="e#30333#30334#0" expanded="true" />
+                <element signature="e#30480#30481#0" expanded="true" />
+                <element signature="e#30549#30550#0" expanded="true" />
+                <element signature="e#30696#30697#0" expanded="true" />
+                <element signature="e#30765#30766#0" expanded="true" />
+                <element signature="e#30912#30913#0" expanded="true" />
+                <element signature="e#30981#30982#0" expanded="true" />
+                <element signature="e#31128#31129#0" expanded="true" />
+                <element signature="e#31197#31198#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,6 +91,14 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Floris-Jan Willemsen &lt;fjwillemsen@icloud.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -72,7 +123,7 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -113,21 +164,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Project 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="Project 3 FJ" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -139,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GMapsFX-2.0.4.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -446,27 +483,27 @@
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36144578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36225086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -482,7 +519,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -496,13 +533,42 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -512,13 +578,42 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -528,13 +623,42 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -544,13 +668,42 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -560,13 +713,42 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -576,13 +758,42 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,13 +803,87 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#map#0;class#Main#0" expanded="false" />
+            <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
+            <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
+            <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
+            <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -626,16 +911,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7406061">
-          <caret line="328" column="42" selection-start-line="328" selection-start-column="42" selection-end-line="328" selection-end-column="42" />
+        <state vertical-scroll-proportion="1.0473815">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
             <element signature="method#map#0;class#Main#0" expanded="false" />
             <element signature="method#coordinatesToAddress#0;class#Main#0" expanded="false" />
             <element signature="method#mapInitialized#0;class#Main#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Main#0" expanded="false" />
             <element signature="method#geoIPLookUp#0;class#Main#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat1Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat2Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat3Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat4Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#getStat5Scene#0;class#Main#0" expanded="false" />
+            <element signature="method#start#0;class#Main#0" expanded="false" />
+            <element signature="e#29137#29138#0" expanded="true" />
+            <element signature="e#29205#29206#0" expanded="true" />
+            <element signature="e#29358#29359#0" expanded="true" />
+            <element signature="e#29433#29434#0" expanded="true" />
+            <element signature="e#29580#29581#0" expanded="true" />
+            <element signature="e#29649#29650#0" expanded="true" />
+            <element signature="e#29795#29796#0" expanded="true" />
+            <element signature="e#29841#29842#0" expanded="true" />
+            <element signature="e#30048#30049#0" expanded="true" />
+            <element signature="e#30117#30118#0" expanded="true" />
+            <element signature="e#30264#30265#0" expanded="true" />
+            <element signature="e#30333#30334#0" expanded="true" />
+            <element signature="e#30480#30481#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#30696#30697#0" expanded="true" />
+            <element signature="e#30765#30766#0" expanded="true" />
+            <element signature="e#30912#30913#0" expanded="true" />
+            <element signature="e#30981#30982#0" expanded="true" />
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31197#31198#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -716,7 +1030,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>json-simple-1.1.1</last-edited>
+          <last-edited>GMapsFX-2.0.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
