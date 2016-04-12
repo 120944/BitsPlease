@@ -55,11 +55,16 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import netscape.javascript.JSObject;
 
+//SQL
+import java.sql.*;
+
 //ImageHandling
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //GeoIP
 import com.maxmind.geoip.Location;
@@ -70,9 +75,6 @@ import com.maxmind.geoip.LookupService;
  */
 
 public class Main extends Application implements MapComponentInitializedListener, DirectionsServiceCallback {
-
-    public static String origin;
-    public static String destination;
 
     public static URL imageUrl;
     public static Image mapImage;
@@ -86,15 +88,34 @@ public class Main extends Application implements MapComponentInitializedListener
     public static Location ipLocation;
     public static boolean staticMap;
     public static JSONArray garageArray;
-
+    public static String origin;
+    public static String destination;
     GoogleMapView mapView;
     GoogleMap map;
     protected DirectionsPane directions;
     DirectionsRenderer renderer;
 
+    public int number;
+    public int passed;
+    public BorderPane borderPane;
+
     public static void main(String args[]) throws MalformedURLException {
         staticMap = false;
         launch();
+    }
+
+    public static ResultSet getDBResults(String dataBaseUrl, String user, String password, String query) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Connection connection = DriverManager.getConnection(dataBaseUrl, user, password);
+            Statement statement =  connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            return resultSet;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     //Gets the Interactive or Static Google Map, applies all of the necessary elements (Markers, waypoints, routes etc.), possibly from external sources (internet)
@@ -519,41 +540,71 @@ public class Main extends Application implements MapComponentInitializedListener
     }
 
     //Draws the Area Chart-scene
-    public VBox getStat3Scene() {
+    public VBox getStat3Scene(int minASCII, int maxASCII) {
         VBox sceneView = new VBox();
         sceneView.setPrefSize(width, height);
+        ResultSet results = getDBResults("jdbc:mysql://localhost:8889/indice", "root", "root", "select * from diefstal_uit_auto");
 
         Text sceneText = new Text();
-        sceneText.setText("Wow, an area chart? You got to be kidding me!");
+        sceneText.setText("Criminaliteit over verschillende jaren in Rotterdam");
         sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
         sceneText.setWrappingWidth(scene.getWidth());
 
         CategoryAxis XAxis = new CategoryAxis();
         NumberAxis YAxis = new NumberAxis();
-        XAxis.setLabel("Event");
-        YAxis.setLabel("Stress");
+        XAxis.setLabel("Jaar");
+        YAxis.setLabel("Cijfer");
 
         final AreaChart<String, Number> areaChart = new AreaChart(XAxis, YAxis);
-        areaChart.setTitle("Stress Graph: 0 = lowest, 100 = highest");
-        XYChart.Series csStudentSeries = new XYChart.Series();
-        XYChart.Series guineaPigs = new XYChart.Series();
-        csStudentSeries.setName("Stress among Computer Science students");
-        guineaPigs.setName("Stress among Guinea Pigs");
+        areaChart.setPrefHeight(900);
 
-        csStudentSeries.getData().addAll(
-                new XYChart.Data("Lectures", 10),
-                new XYChart.Data("Tests", 40),
-                new XYChart.Data("Project", 100),
-                new XYChart.Data("New Period", 0));
+        String range1 = "A-J";
+        String range2 = "K-O";
+        String range3 = "P-Z";
+        String range4 = "A-Z";
+        Text sceneSubText = new Text();
+        sceneSubText.setText("Pick the range you like.");
+        ListView<String> pickRangeList = new ListView<>();
+        ObservableList<String> items =FXCollections.observableArrayList(range1, range2, range3, range4);
+        pickRangeList.setItems(items);
 
-        guineaPigs.getData().addAll(
-                new XYChart.Data("Lectures", 0),
-                new XYChart.Data("Tests", 100),
-                new XYChart.Data("Project", 0),
-                new XYChart.Data("New Period", 0));
+        pickRangeList.getSelectionModel().selectedItemProperty().addListener(
+                (ObservableValue<? extends String> ov, String oldValue,
+                 String newValue) -> {
+                    System.out.println("Changed" + (int) newValue.toLowerCase().charAt(0) + (int) newValue.toLowerCase().charAt(2));
+                    borderPane.setCenter(getStat3Scene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    pickRangeList.getSelectionModel().select(newValue);
+                });
 
-        areaChart.getData().addAll(csStudentSeries, guineaPigs);
-        sceneView.getChildren().addAll(sceneText, areaChart);
+        number = 0;
+        passed = 0;
+        try {
+            while (results.next()) {
+                String name = results.getString("Gebied");
+                char firstLetter = name.toLowerCase().charAt(0);
+                int firstASCIILetter = (int) firstLetter;
+                number++;
+                if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
+                    passed++;
+                    XYChart.Series series = new XYChart.Series();
+                    for (int i = 2; i < 7; i++) {
+                        String year = "" + (i + 2004);
+                        try {
+                            series.getData().add(new XYChart.Data(year, results.getInt(i)));
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    series.setName(name);
+                    areaChart.getData().add(series);
+                }
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Total number of options: " + number + "\nSelected number of options: " + passed);
+        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeList, areaChart);
         return sceneView;
     }
 
@@ -671,7 +722,7 @@ public class Main extends Application implements MapComponentInitializedListener
         primaryStage.setTitle("Statistics");
         width = 1000;
         height = 800;
-        BorderPane borderPane = new BorderPane();
+        borderPane = new BorderPane();
 
         //Creates HBox-menubar layout and buttons
         MenuBar menuBar = new MenuBar();
@@ -750,7 +801,7 @@ public class Main extends Application implements MapComponentInitializedListener
         stat3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                borderPane.setCenter(getStat3Scene());
+                borderPane.setCenter(getStat3Scene(0, 127));
             }
         });
 
