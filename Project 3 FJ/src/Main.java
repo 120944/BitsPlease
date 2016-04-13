@@ -97,6 +97,8 @@ public class Main extends Application implements MapComponentInitializedListener
 
     public int number;
     public int passed;
+    public int average;
+    public String averageYear;
     public BorderPane borderPane;
 
     public static void main(String args[]) throws MalformedURLException {
@@ -404,6 +406,7 @@ public class Main extends Application implements MapComponentInitializedListener
         return sceneView;
     }
 
+    //Draws the About-scene
     public VBox getAboutScene() {
         VBox sceneView = new VBox();
         sceneView.setAlignment(Pos.CENTER);
@@ -543,10 +546,10 @@ public class Main extends Application implements MapComponentInitializedListener
     public VBox getStat3Scene(int minASCII, int maxASCII) {
         VBox sceneView = new VBox();
         sceneView.setPrefSize(width, height);
-        ResultSet results = getDBResults("jdbc:mysql://localhost:8889/indice", "root", "root", "select * from diefstal_uit_auto");
+        ResultSet results = getDBResults("jdbc:mysql://127.0.0.1:3306/indice", "root", "root", "select * from diefstal_uit_auto");
 
         Text sceneText = new Text();
-        sceneText.setText("Criminaliteit over verschillende jaren in Rotterdam");
+        sceneText.setText("Autodiefstal over verschillende jaren in Rotterdam");
         sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
         sceneText.setWrappingWidth(scene.getWidth());
 
@@ -558,6 +561,7 @@ public class Main extends Application implements MapComponentInitializedListener
         final AreaChart<String, Number> areaChart = new AreaChart(XAxis, YAxis);
         areaChart.setPrefHeight(900);
 
+        //You can simply change the letters in these Strings to change the ranges
         String range1 = "A-J";
         String range2 = "K-O";
         String range3 = "P-Z";
@@ -569,6 +573,7 @@ public class Main extends Application implements MapComponentInitializedListener
         pickRangeList.setItems(items);
 
         pickRangeList.getSelectionModel().selectedItemProperty().addListener(
+
                 (ObservableValue<? extends String> ov, String oldValue,
                  String newValue) -> {
                     System.out.println("Changed" + (int) newValue.toLowerCase().charAt(0) + (int) newValue.toLowerCase().charAt(2));
@@ -584,6 +589,10 @@ public class Main extends Application implements MapComponentInitializedListener
                 char firstLetter = name.toLowerCase().charAt(0);
                 int firstASCIILetter = (int) firstLetter;
                 number++;
+                for(int i = 2; i < 7; i++) {
+                    average += results.getInt(i);
+                    averageYear = "" + (i + 2004);
+                }
                 if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
                     passed++;
                     XYChart.Series series = new XYChart.Series();
@@ -599,6 +608,92 @@ public class Main extends Application implements MapComponentInitializedListener
                     areaChart.getData().add(series);
                 }
             }
+            average /= number;
+            XYChart.Series averageSeries = new XYChart.Series();
+            averageSeries.getData().add(new XYChart.Data(averageYear, average));
+            averageSeries.setName("Rotterdam Average");
+            areaChart.getData().add(averageSeries);
+            average = 0;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Total number of options: " + number + "\nSelected number of options: " + passed);
+        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeList, areaChart);
+        return sceneView;
+    }
+
+    //Draws the Area Chart-scene
+    public VBox getStat4Scene(int minASCII, int maxASCII) {
+        VBox sceneView = new VBox();
+        sceneView.setPrefSize(width, height);
+        ResultSet results = getDBResults("jdbc:mysql://127.0.0.1:3306/indice", "root", "root", "select * from beschadiging_aan_auto");
+
+        Text sceneText = new Text();
+        sceneText.setText("Autobeschadiging over verschillende jaren in Rotterdam");
+        sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+        sceneText.setWrappingWidth(scene.getWidth());
+
+        CategoryAxis XAxis = new CategoryAxis();
+        NumberAxis YAxis = new NumberAxis();
+        XAxis.setLabel("Jaar");
+        YAxis.setLabel("Cijfer");
+
+        final AreaChart<String, Number> areaChart = new AreaChart(XAxis, YAxis);
+        areaChart.setPrefHeight(900);
+
+        //You can simply change the letters in these Strings to change the ranges
+        String range1 = "A-J";
+        String range2 = "K-O";
+        String range3 = "P-Z";
+        String range4 = "A-Z";
+        Text sceneSubText = new Text();
+        sceneSubText.setText("Pick the range you like.");
+        ListView<String> pickRangeList = new ListView<>();
+        ObservableList<String> items =FXCollections.observableArrayList(range1, range2, range3, range4);
+        pickRangeList.setItems(items);
+
+        pickRangeList.getSelectionModel().selectedItemProperty().addListener(
+                (ObservableValue<? extends String> ov, String oldValue,
+                 String newValue) -> {
+                    System.out.println("Changed" + (int) newValue.toLowerCase().charAt(0) + (int) newValue.toLowerCase().charAt(2));
+                    borderPane.setCenter(getStat4Scene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    pickRangeList.getSelectionModel().select(newValue);
+                });
+
+        number = 0;
+        passed = 0;
+        try {
+            while (results.next()) {
+                String name = results.getString("Gebied");
+                char firstLetter = name.toLowerCase().charAt(0);
+                int firstASCIILetter = (int) firstLetter;
+                number++;
+                for(int i = 2; i < 7; i++) {
+                    average += results.getInt(i);
+                    averageYear = "" + (i + 2004);
+                }
+                if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
+                    passed++;
+                    XYChart.Series series = new XYChart.Series();
+                    for (int i = 2; i < 7; i++) {
+                        String year = "" + (i + 2004);
+                        try {
+                            series.getData().add(new XYChart.Data(year, results.getInt(i)));
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    series.setName(name);
+                    areaChart.getData().add(series);
+                }
+            }
+            average /= number;
+            XYChart.Series averageSeries = new XYChart.Series();
+            averageSeries.getData().add(new XYChart.Data(averageYear, average));
+            averageSeries.setName("Rotterdam Average");
+            areaChart.getData().add(averageSeries);
+            average = 0;
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -609,7 +704,7 @@ public class Main extends Application implements MapComponentInitializedListener
     }
 
     //Draws the Barchart-scene
-    public VBox getStat4Scene() {
+    public VBox getStat5Scene() {
         VBox sceneView = new VBox();
 
         Text sceneText = new Text();
@@ -660,25 +755,27 @@ public class Main extends Application implements MapComponentInitializedListener
     }
 
     //Draws the Stacked Barchart-scene
-    public VBox getStat5Scene() {
+    public VBox getStat6Scene(int minASCII, int maxASCII) {
         VBox sceneView = new VBox();
+        sceneView.setPrefSize(1440, 900);
+        ResultSet results = getDBResults("jdbc:mysql://127.0.0.1:3306/Crime_per_area", "root", "root", "select * from all_crimes");
 
         Text sceneText = new Text();
-        sceneText.setText("It's the Empire's stacked bar chart. Foo Bar.");
+        sceneText.setText("Aandelen in buurtproblemen per buurt");
         sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
         sceneText.setWrappingWidth(scene.getWidth());
 
-        String item1 = "Armour";
-        String item2 = "Weaponry";
-        String item3 = "Supplies";
-        String item4 = "Personnel";
+        String item1 = "buurtprobleem fietsendiefstal";
+        String item2 = "buurtprobleem diefstal uit de auto";
+        String item3 = "buurtprobleem beschadiging / diefstal auto";
+        String item4 = "slachtofferschap autodiefstal";
 
         CategoryAxis XAxis = new CategoryAxis();
         NumberAxis YAxis = new NumberAxis();
         final StackedBarChart<String, Number> barChart = new StackedBarChart(XAxis, YAxis);
         barChart.setTitle("Sith Stuff. Because Sith rock.");
-        XAxis.setLabel("Event");
-        YAxis.setLabel("Stress");
+        XAxis.setLabel("Probleem");
+        YAxis.setLabel("Index");
         XAxis.setCategories(FXCollections.observableArrayList(Arrays.asList(
                 item1,
                 item2,
@@ -686,33 +783,71 @@ public class Main extends Application implements MapComponentInitializedListener
                 item4
         )));
 
-        XYChart.Series deathStar = new XYChart.Series();
-        XYChart.Series deathStar2 = new XYChart.Series();
-        XYChart.Series starKillerBase = new XYChart.Series();
-        deathStar.setName("Death Star 1 costs");
-        deathStar2.setName("Death Star 2 costs");
-        starKillerBase.setName("Starkiller Base costs");
+        //You can simply change the letters in these Strings to change the ranges
+        String range1 = "A-J";
+        String range2 = "K-O";
+        String range3 = "P-Z";
+        String range4 = "A-Z";
+        Text sceneSubText = new Text();
+        sceneSubText.setText("Pick the range you like.");
+        ListView<String> pickRangeList = new ListView<>();
+        ObservableList<String> items =FXCollections.observableArrayList(range1, range2, range3, range4);
+        pickRangeList.setItems(items);
 
-        deathStar.getData().addAll(
-                new XYChart.Data(item1, 10),
-                new XYChart.Data(item2, 40),
-                new XYChart.Data(item3, 100),
-                new XYChart.Data(item4, 0));
+        pickRangeList.getSelectionModel().selectedItemProperty().addListener(
+                (ObservableValue<? extends String> ov, String oldValue,
+                 String newValue) -> {
+                    System.out.println("Changed" + (int) newValue.toLowerCase().charAt(0) + (int) newValue.toLowerCase().charAt(2));
+                    borderPane.setCenter(getStat6Scene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    pickRangeList.getSelectionModel().select(newValue);
+                });
 
-        deathStar2.getData().addAll(
-                new XYChart.Data(item1, 20),
-                new XYChart.Data(item2, 100),
-                new XYChart.Data(item3, 50),
-                new XYChart.Data(item4, -10));
+//        try {
+//            for(int i = 2; i < 6; i++) {
+//                XYChart.Series series = new XYChart.Series();
+//                System.out.println(XAxis.getCategories().get(i-2));
+//                while (results.next()) {
+//                    if(results.getInt(i) < 5) {
+//                        String name = results.getString("Gebied");
+//                        series.getData().add(new XYChart.Data(XAxis.getCategories().get(i-2), results.getInt(i)));
+////                    System.out.println(results.getRow() + ", " + i);
+//                        System.out.println(results.getInt(i));
+//                    }
+//                }
+//                System.out.println(series.getData());
+//                results.first();
+//                series.setName(XAxis.getCategories().get(i-2));
+//                barChart.getData().add(series);
+//            }
+//        }
+//        catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
-        starKillerBase.getData().addAll(
-                new XYChart.Data(item1, 60),
-                new XYChart.Data(item2, 150),
-                new XYChart.Data(item3, 10),
-                new XYChart.Data(item4, 10));
+        try {
+            while (results.next()) {
+                String name = results.getString("Gebied").replaceAll("\n", "");
+                char firstLetter = name.toLowerCase().charAt(0);
+                int firstASCIILetter = (int) firstLetter;
+                if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
+                    XYChart.Series series = new XYChart.Series();
+                    for (int i = 2; i < 6; i++) {
+                        try {
+                            series.getData().add(new XYChart.Data(XAxis.getCategories().get(i - 2), results.getInt(i)));
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    series.setName(name);
+                    barChart.getData().add(series);
+                }
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        barChart.getData().addAll(deathStar, deathStar2, starKillerBase);
-        sceneView.getChildren().addAll(sceneText, barChart);
+        sceneView.getChildren().addAll(sceneText, pickRangeList, barChart);
         return sceneView;
     }
 
@@ -737,12 +872,13 @@ public class Main extends Application implements MapComponentInitializedListener
         MenuItem start = new MenuItem("Start");
         MenuItem stat1 = new MenuItem("Map Stats");
         MenuItem stat2 = new MenuItem("Pie Chart");
-        MenuItem stat3 = new MenuItem("Area Chart");
-        MenuItem stat4 = new MenuItem("Barchart");
-        MenuItem stat5 = new MenuItem("Stacked Barchart");
+        MenuItem stat3 = new MenuItem("Autodiefstal");
+        MenuItem stat4 = new MenuItem("Autobeschadiging");
+        MenuItem stat5 = new MenuItem("Barchart");
+        MenuItem stat6 = new MenuItem("Stacked Barchart");
 
         general.getItems().addAll(help, preferences, about, quit);
-        statistics.getItems().addAll(start, stat1,stat2,stat3,stat4,stat5);
+        statistics.getItems().addAll(start, stat1,stat2,stat3,stat4,stat5,stat6);
         menuBar.getMenus().addAll(general, statistics);
         borderPane.setTop(menuBar);
         borderPane.setCenter(getStartScene());
@@ -808,7 +944,7 @@ public class Main extends Application implements MapComponentInitializedListener
         stat4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                borderPane.setCenter(getStat4Scene());
+                borderPane.setCenter(getStat4Scene(0, 127));
             }
         });
 
@@ -817,6 +953,11 @@ public class Main extends Application implements MapComponentInitializedListener
             public void handle(ActionEvent event) {
                 borderPane.setCenter(getStat5Scene());
             }
+        });
+
+        stat6.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) { borderPane.setCenter(getStat6Scene(0, 127)); }
         });
 
         //Creates and instantiates the scene
