@@ -12,7 +12,7 @@ import javafx.scene.chart.BarChart;
  */
 public class BarChart1 {
     //Draws the Barchart-scene
-    public static VBox getStat5Scene() {
+    public static VBox getScene() {
         VBox sceneView = new VBox();
 
         Text sceneText = new Text();

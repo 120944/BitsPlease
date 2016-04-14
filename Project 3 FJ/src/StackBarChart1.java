@@ -18,9 +18,9 @@ import java.util.Arrays;
 /**
  * Created by floris-jan on 14-04-16.
  */
-public class StackerBarChart1 {
+public class StackBarChart1 {
     //Draws the Stacked Barchart-scene
-    public static VBox getStat6Scene(int minASCII, int maxASCII) {
+    public static VBox getScene(int minASCII, int maxASCII) {
         VBox sceneView = new VBox();
         sceneView.setPrefSize(1440, 900);
         ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/Crime_per_area", "root", "root", "select * from all_crimes");
@@ -62,7 +62,12 @@ public class StackerBarChart1 {
         pickRangeList.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends String> ov, String oldValue,
                  String newValue) -> {
-                    Main.borderPane.setCenter(getStat6Scene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    if(Main.openInNewWindow) {
+                        Main.stackBarChartScene.setRoot(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    }
+                    else {
+                        Main.borderPane.setCenter(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    }
                     pickRangeList.getSelectionModel().select(newValue);
                 });
 

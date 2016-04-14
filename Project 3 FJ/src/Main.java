@@ -22,6 +22,24 @@ public class Main extends Application {
     public static boolean openInNewWindow;
     public static BorderPane borderPane;
 
+    public static Stage mapStage;
+    public static Scene mapScene;
+
+    public static Stage pieChartStage;
+    public static Scene pieChartScene;
+
+    public static Stage areaChart1Stage;
+    public static Scene areaChart1Scene;
+
+    public static Stage areaChart2Stage;
+    public static Scene areaChart2Scene;
+
+    public static Stage barChartStage;
+    public static Scene barChartScene;
+
+    public static Stage stackBarChartStage;
+    public static Scene stackBarChartScene;
+
     public static void main(String args[]) throws MalformedURLException {
         staticMap = false;
         openInNewWindow = false;
@@ -99,40 +117,104 @@ public class Main extends Application {
 
         stat1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) { borderPane.setCenter(Map.getStat1Scene()); }
+            public void handle(ActionEvent event) {
+                if(openInNewWindow) {
+                    mapStage = new Stage();
+                    mapStage.setTitle("Map");
+                    mapScene = new Scene(Map.getScene(), width, height);
+                    mapScene.setRoot(Map.getScene());
+                    mapStage.setScene(mapScene);
+                    mapStage.show();
+                }
+                else {
+                    borderPane.setCenter(Map.getScene());
+                }
+            }
         });
 
         stat2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                borderPane.setCenter(PieChart1.getStat2Scene());
+                if(openInNewWindow) {
+                    pieChartStage = new Stage();
+                    pieChartStage.setTitle("Pie Chart");
+                    pieChartScene = new Scene(PieChart1.getScene(), width, height);
+                    pieChartScene.setRoot(PieChart1.getScene());
+                    pieChartStage.setScene(pieChartScene);
+                    pieChartStage.show();
+                }
+                else {
+                    borderPane.setCenter(PieChart1.getScene());
+                }
             }
         });
 
         stat3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                borderPane.setCenter(AreaChart1.getStat3Scene(0, 127));
+                if(openInNewWindow) {
+                    areaChart1Stage = new Stage();
+                    areaChart1Stage.setTitle("Area Chart 1");
+                    areaChart1Scene = new Scene(AreaChart1.getScene(0,127), width, height);
+                    areaChart1Scene.setRoot(AreaChart1.getScene(0,127));
+                    areaChart1Stage.setScene(areaChart1Scene);
+                    areaChart1Stage.show();
+                }
+                else {
+                    borderPane.setCenter(AreaChart1.getScene(0, 127));
+                }
             }
         });
 
         stat4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                borderPane.setCenter(AreaChart2.getStat4Scene(0, 127));
+                if(openInNewWindow) {
+                    areaChart2Stage = new Stage();
+                    areaChart2Stage.setTitle("Area Chart 2");
+                    areaChart2Scene = new Scene(AreaChart2.getScene(0,127), width, height);
+                    areaChart2Scene.setRoot(AreaChart2.getScene(0,127));
+                    areaChart2Stage.setScene(areaChart2Scene);
+                    areaChart2Stage.show();
+                }
+                else {
+                    borderPane.setCenter(AreaChart2.getScene(0, 127));
+                }
             }
         });
 
         stat5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                borderPane.setCenter(BarChart1.getStat5Scene());
+                if(openInNewWindow) {
+                    barChartStage = new Stage();
+                    barChartStage.setTitle("Bar Chart");
+                    barChartScene = new Scene(BarChart1.getScene(), width, height);
+                    barChartScene.setRoot(BarChart1.getScene());
+                    barChartStage.setScene(barChartScene);
+                    barChartStage.show();
+                }
+                else {
+                    borderPane.setCenter(BarChart1.getScene());
+                }
             }
         });
 
         stat6.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) { borderPane.setCenter(StackerBarChart1.getStat6Scene(0, 127)); }
+            public void handle(ActionEvent event) {
+                if(openInNewWindow) {
+                    stackBarChartStage = new Stage();
+                    stackBarChartStage.setTitle("Stacked Bar Chart");
+                    stackBarChartScene = new Scene(StackBarChart1.getScene(0,127), width, height);
+                    stackBarChartScene.setRoot(StackBarChart1.getScene(0,127));
+                    stackBarChartStage.setScene(stackBarChartScene);
+                    stackBarChartStage.show();
+                }
+                else {
+                    borderPane.setCenter(StackBarChart1.getScene(0, 127));
+                }
+            }
         });
 
         //Creates and instantiates the scene

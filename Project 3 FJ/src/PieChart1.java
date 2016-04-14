@@ -12,7 +12,7 @@ import javafx.scene.chart.PieChart.Data;
  */
 public class PieChart1 {
     //Draws the Pie Chart-scene
-    public static VBox getStat2Scene() {
+    public static VBox getScene() {
         VBox sceneView = new VBox();
         sceneView.setPrefSize(Main.width, Main.height);
 

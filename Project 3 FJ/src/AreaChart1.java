@@ -19,7 +19,7 @@ import java.sql.SQLException;
  */
 public class AreaChart1 {
     //Draws the Area Chart-scene
-    public static VBox getStat3Scene(int minASCII, int maxASCII) {
+    public static VBox getScene(int minASCII, int maxASCII) {
         VBox sceneView = new VBox();
         sceneView.setPrefSize(Main.width, Main.height);
         ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/indice", "root", "root", "select * from diefstal_uit_auto");
@@ -51,7 +51,12 @@ public class AreaChart1 {
         pickRangeList.getSelectionModel().selectedItemProperty().addListener(
                 (ObservableValue<? extends String> ov, String oldValue,
                  String newValue) -> {
-                    Main.borderPane.setCenter(getStat3Scene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    if(Main.openInNewWindow) {
+                        Main.areaChart1Scene.setRoot(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    }
+                    else {
+                        Main.borderPane.setCenter(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
+                    }
                     pickRangeList.getSelectionModel().select(newValue);
                 });
 
