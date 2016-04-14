@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1190e20-a05e-46f9-96a8-3704b2d52cde" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/StackerBarChart1.java" afterPath="$PROJECT_DIR$/src/StackBarChart1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AreaChart1.java" afterPath="$PROJECT_DIR$/src/AreaChart1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AreaChart2.java" afterPath="$PROJECT_DIR$/src/AreaChart2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BarChart1.java" afterPath="$PROJECT_DIR$/src/BarChart1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/General.java" afterPath="$PROJECT_DIR$/src/General.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map.java" afterPath="$PROJECT_DIR$/src/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PieChart1.java" afterPath="$PROJECT_DIR$/src/PieChart1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StackBarChart1.java" afterPath="$PROJECT_DIR$/src/StackBarChart1.java" />
     </list>
     <ignored path="Project 3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,15 +34,23 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08964144">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.20573565">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Main#0" expanded="false" />
-                <element signature="class#2690:2879" expanded="false" />
-                <element signature="class#2919:3115" expanded="false" />
-                <element signature="class#3149:3339" expanded="false" />
-                <element signature="class#3372:3531" expanded="false" />
-                <element signature="class#3625:3815" expanded="false" />
+                <element signature="class#2785:2974" expanded="false" />
+                <element signature="class#3014:3210" expanded="false" />
+                <element signature="class#3244:3434" expanded="false" />
+                <element signature="e#3569#3570#0" expanded="true" />
+                <element signature="e#3626#3627#0" expanded="true" />
+                <element signature="class#3731:3921" expanded="false" />
+                <element signature="class#3955:4540" expanded="false" />
+                <element signature="method#handle#0;class#4574:5218" expanded="false" />
+                <element signature="class#5252:5932" expanded="false" />
+                <element signature="class#5966:6646" expanded="false" />
+                <element signature="class#6680:7324" expanded="false" />
+                <element signature="class#7358:8076" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,13 +72,15 @@
         <entry file="file://$PROJECT_DIR$/src/General.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getStartScene#0;class#General#0" expanded="false" />
                 <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
                 <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
                 <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
+                <element signature="method#getQuitAlertBox#0;class#General#0" expanded="false" />
+                <element signature="method#getBackground#0;class#General#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,8 +90,10 @@
         <entry file="file://$PROJECT_DIR$/src/StackBarChart1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-              <folding />
+              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,8 +126,10 @@
         <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-              <folding />
+              <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,8 +138,10 @@
         <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-              <folding />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/src/Map.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+              <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#map#0;class#Map#0" expanded="false" />
@@ -176,13 +191,13 @@
         <option value="$PROJECT_DIR$/src/PieChart.java" />
         <option value="$PROJECT_DIR$/src/BarChart.java" />
         <option value="$PROJECT_DIR$/src/SQL.java" />
-        <option value="$PROJECT_DIR$/src/General.java" />
-        <option value="$PROJECT_DIR$/src/Map.java" />
         <option value="$PROJECT_DIR$/src/PieChart1.java" />
         <option value="$PROJECT_DIR$/src/BarChart1.java" />
         <option value="$PROJECT_DIR$/src/StackerBarChart1.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Map.java" />
         <option value="$PROJECT_DIR$/src/StackBarChart1.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/General.java" />
         <option value="$PROJECT_DIR$/src/AreaChart1.java" />
         <option value="$PROJECT_DIR$/src/AreaChart2.java" />
       </list>
@@ -257,6 +272,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,8 +313,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -709,7 +724,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -718,17 +733,80 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#map#0;class#Map#0" expanded="false" />
+            <element signature="method#coordinatesToAddress#0;class#Map#0" expanded="false" />
+            <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
+            <element signature="method#geoIPLookUp#0;class#Map#0" expanded="false" />
+            <element signature="method#getScene#0;class#Map#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -753,6 +831,8 @@
             <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
             <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
             <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
+            <element signature="method#getQuitAlertBox#0;class#General#0" expanded="false" />
+            <element signature="method#getBackground#0;class#General#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,7 +841,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -789,7 +871,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,7 +881,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,12 +907,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -851,6 +945,8 @@
             <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
             <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
             <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
+            <element signature="method#getQuitAlertBox#0;class#General#0" expanded="false" />
+            <element signature="method#getBackground#0;class#General#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -859,7 +955,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -887,7 +985,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -895,7 +995,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -919,12 +1021,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -934,12 +1044,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -949,12 +1067,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -964,12 +1090,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -979,12 +1113,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -994,12 +1136,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1009,12 +1159,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1024,12 +1182,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1039,12 +1205,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1054,12 +1228,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1069,12 +1251,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1084,12 +1274,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1099,12 +1297,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1114,12 +1320,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1129,12 +1343,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1167,17 +1389,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map.java">
+    <entry file="file://$PROJECT_DIR$/src/General.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#map#0;class#Map#0" expanded="false" />
-            <element signature="method#coordinatesToAddress#0;class#Map#0" expanded="false" />
-            <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
-            <element signature="method#geoIPLookUp#0;class#Map#0" expanded="false" />
-            <element signature="method#getScene#0;class#Map#0" expanded="false" />
+            <element signature="method#getStartScene#0;class#General#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
+            <element signature="method#getQuitAlertBox#0;class#General#0" expanded="false" />
+            <element signature="method#getBackground#0;class#General#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1192,32 +1415,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getStartScene#0;class#General#0" expanded="false" />
-            <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
-            <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
-            <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/StackBarChart1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding />
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1237,30 +1448,57 @@
     <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-          <folding />
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#map#0;class#Map#0" expanded="false" />
+            <element signature="method#coordinatesToAddress#0;class#Map#0" expanded="false" />
+            <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
+            <element signature="method#geoIPLookUp#0;class#Map#0" expanded="false" />
+            <element signature="method#getScene#0;class#Map#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08964144">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.20573565">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="class#2690:2879" expanded="false" />
-            <element signature="class#2919:3115" expanded="false" />
-            <element signature="class#3149:3339" expanded="false" />
-            <element signature="class#3372:3531" expanded="false" />
-            <element signature="class#3625:3815" expanded="false" />
+            <element signature="class#2785:2974" expanded="false" />
+            <element signature="class#3014:3210" expanded="false" />
+            <element signature="class#3244:3434" expanded="false" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+            <element signature="class#3731:3921" expanded="false" />
+            <element signature="class#3955:4540" expanded="false" />
+            <element signature="method#handle#0;class#4574:5218" expanded="false" />
+            <element signature="class#5252:5932" expanded="false" />
+            <element signature="class#5966:6646" expanded="false" />
+            <element signature="class#6680:7324" expanded="false" />
+            <element signature="class#7358:8076" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -241,8 +241,6 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
                 }
             }
         }
-
-
     }
 
     //Handles received directions

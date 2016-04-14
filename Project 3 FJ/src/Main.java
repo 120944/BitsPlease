@@ -41,8 +41,11 @@ public class Main extends Application {
     public static Scene stackBarChartScene;
 
     public static void main(String args[]) throws MalformedURLException {
+        //Default preferences
         staticMap = false;
         openInNewWindow = false;
+        General.backgroundImageFileString = "Background 1.png";
+
         launch();
     }
 
@@ -103,7 +106,7 @@ public class Main extends Application {
         quit.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.exit(0);
+                General.getQuitAlertBox();
             }
         });
 

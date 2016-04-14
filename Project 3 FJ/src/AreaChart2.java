@@ -1,11 +1,10 @@
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.ListView;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -38,28 +37,32 @@ public class AreaChart2 {
         final AreaChart<String, Number> areaChart = new AreaChart(XAxis, YAxis);
         areaChart.setPrefHeight(900);
 
-        //You can simply change the letters in these Strings to change the ranges
-        String range1 = "A-J";
-        String range2 = "K-O";
-        String range3 = "P-Z";
-        String range4 = "A-Z";
         Text sceneSubText = new Text();
         sceneSubText.setText("Pick the range you like.");
-        ListView<String> pickRangeList = new ListView<>();
-        ObservableList<String> items = FXCollections.observableArrayList(range1, range2, range3, range4);
-        pickRangeList.setItems(items);
 
-        pickRangeList.getSelectionModel().selectedItemProperty().addListener(
-                (ObservableValue<? extends String> ov, String oldValue,
-                 String newValue) -> {
-                    if(Main.openInNewWindow) {
-                        Main.areaChart2Scene.setRoot(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
-                    }
-                    else {
-                        Main.borderPane.setCenter(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
-                    }
-                    pickRangeList.getSelectionModel().select(newValue);
-                });
+        //You can simply change the letters in these Strings to change the ranges
+        ComboBox pickRangeComboBox = new ComboBox();
+        pickRangeComboBox.getItems().addAll(
+                "A-J",
+                "K-O",
+                "P-Z",
+                "A-Z"
+        );
+        pickRangeComboBox.setPromptText("Select a range");
+        pickRangeComboBox.setEditable(true);
+        pickRangeComboBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if(Main.openInNewWindow) {
+                    Main.stackBarChartScene.setRoot(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
+                }
+                else {
+                    Main.borderPane.setCenter(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
+                }
+            }
+        });
+        if(minASCII == 0 && maxASCII == 127) { pickRangeComboBox.setValue("A-Z"); }
+        else { pickRangeComboBox.setValue((char) (minASCII - 32) + "-" + (char) (maxASCII - 32)); }
 
         int number = 0;
         int passed = 0;
@@ -101,7 +104,7 @@ public class AreaChart2 {
             e.printStackTrace();
         }
         System.out.println("Total number of options: " + number + "\nSelected number of options: " + passed);
-        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeList, areaChart);
+        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeComboBox, areaChart);
         return sceneView;
     }
 

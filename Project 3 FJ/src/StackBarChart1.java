@@ -1,11 +1,11 @@
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.ListView;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -49,49 +49,28 @@ public class StackBarChart1 {
         )));
 
         //You can simply change the letters in these Strings to change the ranges
-        String range1 = "A-J";
-        String range2 = "K-O";
-        String range3 = "P-Z";
-        String range4 = "A-Z";
-        Text sceneSubText = new Text();
-        sceneSubText.setText("Pick the range you like.");
-        ListView<String> pickRangeList = new ListView<>();
-        ObservableList<String> items =FXCollections.observableArrayList(range1, range2, range3, range4);
-        pickRangeList.setItems(items);
-
-        pickRangeList.getSelectionModel().selectedItemProperty().addListener(
-                (ObservableValue<? extends String> ov, String oldValue,
-                 String newValue) -> {
-                    if(Main.openInNewWindow) {
-                        Main.stackBarChartScene.setRoot(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
-                    }
-                    else {
-                        Main.borderPane.setCenter(getScene((int) newValue.toLowerCase().charAt(0), (int) newValue.toLowerCase().charAt(2)));
-                    }
-                    pickRangeList.getSelectionModel().select(newValue);
-                });
-
-//        try {
-//            for(int i = 2; i < 6; i++) {
-//                XYChart.Series series = new XYChart.Series();
-//                System.out.println(XAxis.getCategories().get(i-2));
-//                while (results.next()) {
-//                    if(results.getInt(i) < 5) {
-//                        String name = results.getString("Gebied");
-//                        series.getData().add(new XYChart.Data(XAxis.getCategories().get(i-2), results.getInt(i)));
-////                    System.out.println(results.getRow() + ", " + i);
-//                        System.out.println(results.getInt(i));
-//                    }
-//                }
-//                System.out.println(series.getData());
-//                results.first();
-//                series.setName(XAxis.getCategories().get(i-2));
-//                barChart.getData().add(series);
-//            }
-//        }
-//        catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        ComboBox pickRangeComboBox = new ComboBox();
+        pickRangeComboBox.getItems().addAll(
+                "A-J",
+                "K-O",
+                "P-Z",
+                "A-Z"
+        );
+        pickRangeComboBox.setPromptText("Select a range");
+        pickRangeComboBox.setEditable(true);
+        pickRangeComboBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if(Main.openInNewWindow) {
+                    Main.stackBarChartScene.setRoot(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
+                }
+                else {
+                    Main.borderPane.setCenter(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
+                }
+            }
+        });
+        if(minASCII == 0 && maxASCII == 127) { pickRangeComboBox.setValue("A-Z"); }
+        else { pickRangeComboBox.setValue((char) (minASCII - 32) + "-" + (char) (maxASCII - 32)); }
 
         try {
             while (results.next()) {
@@ -116,7 +95,7 @@ public class StackBarChart1 {
             e.printStackTrace();
         }
 
-        sceneView.getChildren().addAll(sceneText, pickRangeList, barChart);
+        sceneView.getChildren().addAll(sceneText, pickRangeComboBox, barChart);
         return sceneView;
     }
 }
