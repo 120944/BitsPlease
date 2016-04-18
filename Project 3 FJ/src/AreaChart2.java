@@ -1,9 +1,6 @@
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -11,12 +8,11 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * Created by floris-jan on 14-04-16.
  */
-public class AreaChart2 extends IAreaChart {
+public class AreaChart2 extends MyAreaChart {
 
     //Draws the Area Chart-scene
     public static VBox getScene(int minASCII, int maxASCII) {
@@ -50,16 +46,13 @@ public class AreaChart2 extends IAreaChart {
         );
         pickRangeComboBox.setPromptText("Select a range");
         pickRangeComboBox.setEditable(true);
-        pickRangeComboBox.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
+        pickRangeComboBox.setOnAction((q) -> {
                 if(Main.openInNewWindow) {
                     Main.stackBarChartScene.setRoot(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
                 }
                 else {
                     Main.borderPane.setCenter(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
                 }
-            }
         });
         if(minASCII == 0 && maxASCII == 127) { pickRangeComboBox.setValue("A-Z"); }
         else { pickRangeComboBox.setValue((char) (minASCII - 32) + "-" + (char) (maxASCII - 32)); }

@@ -318,31 +318,26 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
             image2.setFitWidth(Main.width);
             image2.setSmooth(true);
             image2.setCache(true);
-            if (scene != null) { image2.setViewport(new Rectangle2D(0, 0, scene.getWidth(), scene.getHeight())); }
+            if (scene != null) {
+                image2.setViewport(new Rectangle2D(0, 0, scene.getWidth(), scene.getHeight()));
+            }
             image2.setImage(mapImage);
             mapViewVBox.getChildren().addAll(zoomInButton, zoomOutButton, originLabel, destinationLabel, image2);
 
             //Zooms the ImageMapView in
-            zoomInButton.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
+            zoomInButton.setOnAction((q) -> {
                     zoom++;
                     map();
                     image2.setImage(mapImage);
-                }
             });
 
             //Zooms the ImageMapView out
-            zoomOutButton.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    zoom--;
-                    map();
-                    image2.setImage(mapImage);
-                }
+            zoomOutButton.setOnAction((q) -> {
+                zoom--;
+                map();
+                image2.setImage(mapImage);
             });
         }
-
         else {
             mapView = new GoogleMapView();
             mapView.addMapInializedListener(new Map());

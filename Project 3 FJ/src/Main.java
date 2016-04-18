@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Menu;
@@ -82,141 +80,105 @@ public class Main extends Application {
         borderPane.setCenter(General.getStartScene());
 
         //Sets listeners for the General menubar-buttons
-        help.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                borderPane.setCenter(General.getHelpScene());
-            }
-        });
+        help.setOnAction((q) -> borderPane.setCenter(General.getHelpScene()));
 
-        preferences.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                borderPane.setCenter(General.getPreferencesScene());
-            }
-        });
+        preferences.setOnAction((q) -> borderPane.setCenter(General.getPreferencesScene()));
 
-        about.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                borderPane.setCenter(General.getAboutScene());
-            }
-        });
+        about.setOnAction((q) -> borderPane.setCenter(General.getAboutScene()));
 
-        quit.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                General.getQuitAlertBox();
-            }
-        });
+        quit.setOnAction((q) -> General.getQuitAlertBox());
 
         //Sets listeners for the Statistics menubar-buttons
-        start.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                borderPane.setCenter(General.getStartScene());
+        start.setOnAction((q) -> borderPane.setCenter(General.getStartScene()));
+
+        stat1.setOnAction((q) -> {
+            if(openInNewWindow) {
+                mapStage = new Stage();
+                mapStage.setTitle("Map");
+                mapScene = new Scene(Map.getScene(), width, height);
+                mapScene.setRoot(Map.getScene());
+                mapStage.setScene(mapScene);
+                mapStage.show();
+            }
+            else {
+                borderPane.setCenter(Map.getScene());
             }
         });
 
-        stat1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(openInNewWindow) {
-                    mapStage = new Stage();
-                    mapStage.setTitle("Map");
-                    mapScene = new Scene(Map.getScene(), width, height);
-                    mapScene.setRoot(Map.getScene());
-                    mapStage.setScene(mapScene);
-                    mapStage.show();
-                }
-                else {
-                    borderPane.setCenter(Map.getScene());
-                }
+        stat2.setOnAction((q) -> {
+            if(openInNewWindow) {
+                pieChartStage = new Stage();
+                pieChartStage.setTitle("Pie Chart");
+                pieChartScene = new Scene(PieChart1.getScene(), width, height);
+                pieChartScene.setRoot(PieChart1.getScene());
+                pieChartStage.setScene(pieChartScene);
+                pieChartStage.show();
+            }
+            else {
+                borderPane.setCenter(PieChart1.getScene());
             }
         });
 
-        stat2.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(openInNewWindow) {
-                    pieChartStage = new Stage();
-                    pieChartStage.setTitle("Pie Chart");
-                    pieChartScene = new Scene(PieChart1.getScene(), width, height);
-                    pieChartScene.setRoot(PieChart1.getScene());
-                    pieChartStage.setScene(pieChartScene);
-                    pieChartStage.show();
-                }
-                else {
-                    borderPane.setCenter(PieChart1.getScene());
-                }
+        stat3.setOnAction((q) -> {
+            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/indice", "root", "root",
+                    "select * from diefstal_uit_auto", "Autodiefstal over verschillende jaren in Rotterdam",
+                    "Jaar", "Cijfer"};
+            if(openInNewWindow) {
+                areaChart1Stage = new Stage();
+                areaChart1Stage.setTitle("Area Chart 1");
+                areaChart1Scene = new Scene(MyAreaChart.getScene(chartInfo,0,127), width, height);
+                areaChart1Scene.setRoot(MyAreaChart.getScene(chartInfo,0,127));
+                areaChart1Stage.setScene(areaChart1Scene);
+                areaChart1Stage.show();
+            }
+            else {
+                borderPane.setCenter(MyAreaChart.getScene(chartInfo, 0, 127));
             }
         });
 
-        stat3.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(openInNewWindow) {
-                    areaChart1Stage = new Stage();
-                    areaChart1Stage.setTitle("Area Chart 1");
-                    areaChart1Scene = new Scene(AreaChart1.getScene(0,127), width, height);
-                    areaChart1Scene.setRoot(AreaChart1.getScene(0,127));
-                    areaChart1Stage.setScene(areaChart1Scene);
-                    areaChart1Stage.show();
-                }
-                else {
-                    borderPane.setCenter(AreaChart1.getScene(0, 127));
-                }
+        stat4.setOnAction((q) -> {
+            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/indice", "root", "root",
+                    "select * from beschadiging_aan_auto",
+                    "Autobeschadiging over verschillende jaren in Rotterdam",
+                    "Jaar", "Cijfer"};
+            if(openInNewWindow) {
+                areaChart2Stage = new Stage();
+                areaChart2Stage.setTitle("Area Chart 2");
+                areaChart2Scene = new Scene(MyAreaChart.getScene(chartInfo,0,127), width, height);
+                areaChart2Scene.setRoot(MyAreaChart.getScene(chartInfo,0,127));
+                areaChart2Stage.setScene(areaChart2Scene);
+                areaChart2Stage.show();
+            }
+            else {
+                borderPane.setCenter(MyAreaChart.getScene(chartInfo,0,127));
             }
         });
 
-        stat4.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(openInNewWindow) {
-                    areaChart2Stage = new Stage();
-                    areaChart2Stage.setTitle("Area Chart 2");
-                    areaChart2Scene = new Scene(AreaChart2.getScene(0,127), width, height);
-                    areaChart2Scene.setRoot(AreaChart2.getScene(0,127));
-                    areaChart2Stage.setScene(areaChart2Scene);
-                    areaChart2Stage.show();
-                }
-                else {
-                    borderPane.setCenter(AreaChart2.getScene(0, 127));
-                }
+        stat5.setOnAction((q) -> {
+            if(openInNewWindow) {
+                barChartStage = new Stage();
+                barChartStage.setTitle("Bar Chart");
+                barChartScene = new Scene(BarChart1.getScene(), width, height);
+                barChartScene.setRoot(BarChart1.getScene());
+                barChartStage.setScene(barChartScene);
+                barChartStage.show();
+            }
+            else {
+                borderPane.setCenter(BarChart1.getScene());
             }
         });
 
-        stat5.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(openInNewWindow) {
-                    barChartStage = new Stage();
-                    barChartStage.setTitle("Bar Chart");
-                    barChartScene = new Scene(BarChart1.getScene(), width, height);
-                    barChartScene.setRoot(BarChart1.getScene());
-                    barChartStage.setScene(barChartScene);
-                    barChartStage.show();
-                }
-                else {
-                    borderPane.setCenter(BarChart1.getScene());
-                }
+        stat6.setOnAction((q) -> {
+            if(openInNewWindow) {
+                stackBarChartStage = new Stage();
+                stackBarChartStage.setTitle("Stacked Bar Chart");
+                stackBarChartScene = new Scene(StackBarChart1.getScene(0,127), width, height);
+                stackBarChartScene.setRoot(StackBarChart1.getScene(0,127));
+                stackBarChartStage.setScene(stackBarChartScene);
+                stackBarChartStage.show();
             }
-        });
-
-        stat6.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(openInNewWindow) {
-                    stackBarChartStage = new Stage();
-                    stackBarChartStage.setTitle("Stacked Bar Chart");
-                    stackBarChartScene = new Scene(StackBarChart1.getScene(0,127), width, height);
-                    stackBarChartScene.setRoot(StackBarChart1.getScene(0,127));
-                    stackBarChartStage.setScene(stackBarChartScene);
-                    stackBarChartStage.show();
-                }
-                else {
-                    borderPane.setCenter(StackBarChart1.getScene(0, 127));
-                }
+            else {
+                borderPane.setCenter(StackBarChart1.getScene(0, 127));
             }
         });
 
