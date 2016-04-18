@@ -244,8 +244,6 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
                 }
             }
         }
-
-
     }
 
     //Handles received directions
@@ -297,7 +295,7 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
     }
 
     //Draws the Map-scene
-    public static VBox getStat1Scene() {
+    public static VBox getScene() {
         map();
         VBox mapViewVBox = new VBox(8);
 
