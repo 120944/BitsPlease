@@ -12,8 +12,12 @@ public class SQL {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(dataBaseUrl, user, password);
             Statement statement =  connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
-            return resultSet;
+
+            /* Following part was redundant, storing the resultSet locally before immediately returning out of the function
+             * ResultSet resultSet = statement.executeQuery(query);
+             * return resultSet;
+             */
+            return statement.executeQuery(query);
         }
         catch (Exception e) {
             e.printStackTrace();

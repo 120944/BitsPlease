@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 //JSON
+import jdk.nashorn.internal.scripts.JO;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -36,6 +37,8 @@ import java.net.HttpURLConnection;
 import java.net.InetAddress;
 import java.net.URL;
 import netscape.javascript.JSObject;
+
+/* Uses apache commons version: 2.4 */
 import org.apache.commons.io.IOUtils;
 
 //ImageHandling
@@ -131,12 +134,12 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
             JSONObject stepsArray = (JSONObject) legs.get(0);
             JSONArray steps = (JSONArray) stepsArray.get("steps");
 
-            for (int j = 0; j < steps.size(); j++) {
-                JSONObject startArray = (JSONObject) steps.get(j);
+            for (Object obj : steps) {
+                JSONObject startArray = (JSONObject) obj;
                 JSONObject start = (JSONObject) startArray.get("start_location");
                 Double startLat = (Double) start.get("lat");
-                Double startLng = (Double) start.get("lng");
-                String startLoc = startLat + "," + startLng;
+                Double startlng = (Double) start.get("lng");
+                String startLoc = startLat + "," + startlng;
                 route += startLoc + "|";
             }
 

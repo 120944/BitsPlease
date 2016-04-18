@@ -63,26 +63,20 @@ public class General {
         sceneText.setText("Preferences");
         sceneText.setFont(Font.font("null", FontWeight.LIGHT, 40));
 
+        /* changed to use lambda, removed redundant if/else statement */
         CheckBox staticMapBox = new CheckBox();
         staticMapBox.setText("Enable Static Maps");
         if(Main.staticMap) { staticMapBox.setSelected(true); }
-        staticMapBox.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(Main.staticMap) { Main.staticMap=false; }
-                else { Main.staticMap = true; }
-            }
+        staticMapBox.setOnAction((q) -> {
+            Main.staticMap = !Main.staticMap;
         });
 
+        /* changed to use lambda, removed redundant if/else statement */
         CheckBox openInNewWindowBox = new CheckBox();
         openInNewWindowBox.setText("Open every chart in a seperate window");
         if(Main.openInNewWindow) { openInNewWindowBox.setSelected(true); }
-        openInNewWindowBox.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(Main.openInNewWindow) { Main.openInNewWindow=false; }
-                else { Main.openInNewWindow = true; }
-            }
+        openInNewWindowBox.setOnAction((p) -> {
+            Main.openInNewWindow = !Main.openInNewWindow;
         });
 
         sceneView.getChildren().addAll(sceneText, staticMapBox, openInNewWindowBox);

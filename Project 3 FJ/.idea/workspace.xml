@@ -1,131 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1190e20-a05e-46f9-96a8-3704b2d52cde" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AreaChart1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AreaChart2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BarChart1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/General.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Map.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PieChart1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SQL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/StackerBarChart1.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/META-INF/maven/com.lynden/GMapsFX/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/META-INF/maven/com.lynden/GMapsFX/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/ArrayTester$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/ArrayTester$TestJSO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/ArrayTester.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/GoogleMapView$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/GoogleMapView$JSListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/GoogleMapView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/MainApp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/MapComponentInitializedListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/MapNotInitializedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/MapReadyListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/IJavascriptRuntime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/IWebEngine.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavaFxWebEngine.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavascriptArray.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavascriptEnum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavascriptFunction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavascriptFunctionLine.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavascriptObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/JavascriptRuntime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/event/EventHandlers.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/event/GFXEventHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/event/MapStateEventType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/event/StateEventHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/event/UIEventHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/event/UIEventType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/Animation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/DirectionsPane.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/GMapObjectType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/GMapPoint.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/GoogleMap.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/InfoWindow.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/InfoWindowOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/LatLong.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/LatLongBounds.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/MVCArray.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/MapOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/MapShape.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/MapTypeIdEnum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/Marker.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/MarkerOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/Polyline.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/PolylineOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/Projection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/javascript/object/Size.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsGeocodedWaypoint.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsGeocodedWaypointStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsLeg.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsRoute.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsServiceCallback.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsSteps.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DirectionsWaypoint.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/Distance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/DrivingOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/Duration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/TrafficModel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/directions/TravelModes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/elevation/ElevationResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/elevation/ElevationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/elevation/ElevationServiceCallback.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/elevation/ElevationStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/elevation/LocationElevationRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/elevation/PathElevationRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderAddressComponent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderAddressComponentType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderComponentRestrictions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderGeometry.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderLocationType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocoderUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocodingResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocodingService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/service/geocoding/GeocodingServiceCallback.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/ArcBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/Circle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/CircleOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/FillableMapShapeOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/MapShapeOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/Polygon.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/PolygonOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/Polyline.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/PolylineOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/Rectangle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/RectangleOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/shapes/StrokePosition.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/zoom/MaxZoomResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/zoom/MaxZoomService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/zoom/MaxZoomServiceCallback.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/com/lynden/gmapsfx/zoom/MaxZoomStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/html/arrays.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/html/maps.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/html/maps_1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GMapsFX-2.0.4-Original/html/v3_epoly.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GeoLiteCityIPV6.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GeoLiteCountryIPV6.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Parking.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Secured_Parking.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Selected_Parking.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/geoip2-2.6.0.jar" afterPath="" />
+    <list default="true" id="b1190e20-a05e-46f9-96a8-3704b2d52cde" name="Default" comment="Including apache commonsIO in project folder&#10;Optimisation and small readability changes">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IAreaChart.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/geoip2_2_6_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_4_javadoc.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_4_javadoc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project 3.iml" afterPath="$PROJECT_DIR$/Project 3.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AreaChart1.java" afterPath="$PROJECT_DIR$/src/AreaChart1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AreaChart2.java" afterPath="$PROJECT_DIR$/src/AreaChart2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/General.java" afterPath="$PROJECT_DIR$/src/General.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map.java" afterPath="$PROJECT_DIR$/src/Map.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL.java" afterPath="$PROJECT_DIR$/src/SQL.java" />
     </list>
     <ignored path="Project 3.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="C:\Users\Lucas\OneDrive\Schoolwork\Proj3\BitsPlease\Project 3 FJ\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,15 +34,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54239404">
-              <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+            <state relative-caret-position="-101">
+              <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Main#0" expanded="false" />
-                <element signature="method#start#0;class#Main#0" expanded="false" />
                 <element signature="class#2208:2397" expanded="false" />
                 <element signature="class#2437:2633" expanded="false" />
                 <element signature="class#2667:2857" expanded="false" />
@@ -171,8 +61,8 @@
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="9" column="105" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,12 +73,13 @@
       <file leaf-file-name="General.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/General.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="255">
+              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getStartScene#0;class#General#0" expanded="false" />
                 <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
+                <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
                 <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
               </folding>
             </state>
@@ -198,8 +89,8 @@
       <file leaf-file-name="StackerBarChart1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StackerBarChart1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+            <state relative-caret-position="-730">
+              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -210,7 +101,7 @@
       <file leaf-file-name="BarChart1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="17">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -222,7 +113,7 @@
       <file leaf-file-name="PieChart1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="460">
               <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -234,8 +125,8 @@
       <file leaf-file-name="AreaChart1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="375">
+              <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -246,8 +137,8 @@
       <file leaf-file-name="AreaChart2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -255,15 +146,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IAreaChart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IAreaChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="-822">
+              <caret line="299" column="39" selection-start-line="299" selection-start-column="39" selection-end-line="299" selection-end-column="39" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#mapInitialized#0;class#Map#0" expanded="false" />
                 <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
-                <element signature="method#getStat1Scene#0;class#Map#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -298,12 +201,13 @@
         <option value="$PROJECT_DIR$/src/BarChart.java" />
         <option value="$PROJECT_DIR$/src/PieChart1.java" />
         <option value="$PROJECT_DIR$/src/BarChart1.java" />
-        <option value="$PROJECT_DIR$/src/SQL.java" />
-        <option value="$PROJECT_DIR$/src/AreaChart1.java" />
-        <option value="$PROJECT_DIR$/src/AreaChart2.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/General.java" />
         <option value="$PROJECT_DIR$/src/StackerBarChart1.java" />
+        <option value="$PROJECT_DIR$/src/General.java" />
+        <option value="$PROJECT_DIR$/src/SQL.java" />
+        <option value="$PROJECT_DIR$/src/IAreaChart.java" />
+        <option value="$PROJECT_DIR$/src/AreaChart2.java" />
+        <option value="$PROJECT_DIR$/src/AreaChart1.java" />
         <option value="$PROJECT_DIR$/src/Map.java" />
       </list>
     </option>
@@ -321,8 +225,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -377,9 +283,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -418,16 +323,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysql-connector-java-5.1.38-bin.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/commons-io-2.4" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="FullScreen" value="true" />
+    <property name="project.structure.side.proportion" value="0.38850576" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="136" />
@@ -471,31 +376,21 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -505,27 +400,15 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -551,6 +434,133 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -565,6 +575,14 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -630,6 +648,9 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -661,6 +682,12 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -719,6 +746,22 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
     </list>
@@ -728,7 +771,9 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -737,45 +782,48 @@
       <changelist id="b1190e20-a05e-46f9-96a8-3704b2d52cde" name="Default" comment="" />
       <created>1459842530550</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1459842530550</updated>
       <workItem from="1460387911905" duration="376000" />
+      <workItem from="1460636234282" duration="637000" />
+      <workItem from="1460963121744" duration="3477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376000" />
+    <option name="totallyTimeSpent" value="4490000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36144578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36078006" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3987952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -818,6 +866,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Including apache commonsIO in project folder&#10;Optimisation and small readability changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Including apache commonsIO in project folder&#10;Optimisation and small readability changes" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
@@ -838,14 +890,55 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#mapInitialized#0;class#Map#0" expanded="false" />
+            <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -863,7 +956,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="306">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/General.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getStartScene#0;class#General#0" expanded="false" />
+            <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
+            <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StackerBarChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#mapInitialized#0;class#Map#0" expanded="false" />
+            <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="class#2208:2397" expanded="false" />
+            <element signature="class#2437:2633" expanded="false" />
+            <element signature="class#2667:2857" expanded="false" />
+            <element signature="class#2890:3049" expanded="false" />
+            <element signature="class#3143:3333" expanded="false" />
+            <element signature="class#3367:3525" expanded="false" />
+            <element signature="class#3559:3751" expanded="false" />
+            <element signature="class#3785:3984" expanded="false" />
+            <element signature="class#4018:4217" expanded="false" />
+            <element signature="class#4251:4443" expanded="false" />
+            <element signature="class#4477:4654" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -873,12 +1074,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/General.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getStartScene#0;class#General#0" expanded="false" />
             <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
             <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
           </folding>
         </state>
@@ -886,7 +1088,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StackerBarChart1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -896,7 +1098,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -906,7 +1108,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -916,7 +1118,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -926,7 +1128,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -936,24 +1138,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#mapInitialized#0;class#Map#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
-            <element signature="method#getStat1Scene#0;class#Map#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -971,12 +1172,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -994,12 +1194,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1017,12 +1216,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1040,12 +1238,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1063,12 +1260,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1086,12 +1282,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1109,12 +1304,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1132,12 +1326,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1155,12 +1348,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1178,12 +1370,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1201,12 +1392,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1224,12 +1414,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1247,12 +1436,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1270,12 +1458,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
             <element signature="class#2208:2397" expanded="false" />
             <element signature="class#2437:2633" expanded="false" />
             <element signature="class#2667:2857" expanded="false" />
@@ -1291,68 +1478,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/src.zip!/java/net/AbstractPlainSocketImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/src.zip!/java/net/AbstractPlainSocketImpl.java" />
     <entry file="jar://$PROJECT_DIR$/GMapsFX-2.0.4.jar!/com/lynden/gmapsfx/javascript/JavascriptObject.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/GMapsFX-2.0.4.jar!/com/lynden/gmapsfx/javascript/object/MarkerOptions.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/json-simple-1.1.1.jar!/org/json/simple/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3671171">
+        <state relative-caret-position="0">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="-101">
+          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="class#2208:2397" expanded="false" />
+            <element signature="class#2437:2633" expanded="false" />
+            <element signature="class#2667:2857" expanded="false" />
+            <element signature="class#2890:3049" expanded="false" />
+            <element signature="class#3143:3333" expanded="false" />
+            <element signature="class#3367:3525" expanded="false" />
+            <element signature="class#3559:3751" expanded="false" />
+            <element signature="class#3785:3984" expanded="false" />
+            <element signature="class#4018:4217" expanded="false" />
+            <element signature="class#4251:4443" expanded="false" />
+            <element signature="class#4477:4654" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
+    <entry file="file://$PROJECT_DIR$/src/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="105" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1361,12 +1534,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/General.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        <state relative-caret-position="255">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getStartScene#0;class#General#0" expanded="false" />
             <element signature="method#getHelpScene#0;class#General#0" expanded="false" />
+            <element signature="method#getPreferencesScene#0;class#General#0" expanded="false" />
             <element signature="method#getAboutScene#0;class#General#0" expanded="false" />
           </folding>
         </state>
@@ -1374,8 +1548,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StackerBarChart1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+        <state relative-caret-position="-730">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PieChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IAreaChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AreaChart1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1384,45 +1608,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="-822">
+          <caret line="299" column="39" selection-start-line="299" selection-start-column="39" selection-end-line="299" selection-end-column="39" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#mapInitialized#0;class#Map#0" expanded="false" />
             <element signature="method#directionsReceived#0;class#Map#0" expanded="false" />
-            <element signature="method#getStat1Scene#0;class#Map#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54239404">
-          <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-            <element signature="method#start#0;class#Main#0" expanded="false" />
-            <element signature="class#2208:2397" expanded="false" />
-            <element signature="class#2437:2633" expanded="false" />
-            <element signature="class#2667:2857" expanded="false" />
-            <element signature="class#2890:3049" expanded="false" />
-            <element signature="class#3143:3333" expanded="false" />
-            <element signature="class#3367:3525" expanded="false" />
-            <element signature="class#3559:3751" expanded="false" />
-            <element signature="class#3785:3984" expanded="false" />
-            <element signature="class#4018:4217" expanded="false" />
-            <element signature="class#4251:4443" expanded="false" />
-            <element signature="class#4477:4654" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1507,7 +1698,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.38850576" />
               </list>
             </option>
           </splitter-proportions>
