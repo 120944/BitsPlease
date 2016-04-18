@@ -66,7 +66,7 @@ public class AreaChart2 extends IAreaChart {
 
         DataToChart(results,minASCII,maxASCII,areaChart);
 
-        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeList, areaChart);
+        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeComboBox, areaChart);
         return sceneView;
     }
 
