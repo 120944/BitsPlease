@@ -23,7 +23,7 @@ public class StackBarChart1 {
     public static VBox getScene(int minASCII, int maxASCII) {
         VBox sceneView = new VBox();
         sceneView.setPrefSize(1440, 900);
-        ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/Crime_per_area", "root", "root", "select * from all_crimes");
+        ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "select * from all_crimes");
 
         Text sceneText = new Text();
         sceneText.setText("Aandelen in buurtproblemen per buurt");
@@ -58,24 +58,24 @@ public class StackBarChart1 {
         );
         pickRangeComboBox.setPromptText("Select a range");
         pickRangeComboBox.setEditable(true);
-        pickRangeComboBox.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
+        pickRangeComboBox.setOnAction((q) -> {
                 if(Main.openInNewWindow) {
                     Main.stackBarChartScene.setRoot(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
                 }
                 else {
                     Main.borderPane.setCenter(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
                 }
-            }
         });
         if(minASCII == 0 && maxASCII == 127) { pickRangeComboBox.setValue("A-Z"); }
         else { pickRangeComboBox.setValue((char) (minASCII - 32) + "-" + (char) (maxASCII - 32)); }
 
         try {
+            int deb = 0;
             while (results.next()) {
                 String name = results.getString("Gebied").replaceAll("\n", "");
+                System.err.println(name + deb);
                 char firstLetter = name.toLowerCase().charAt(0);
+                deb++;
                 int firstASCIILetter = (int) firstLetter;
                 if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
                     XYChart.Series series = new XYChart.Series();

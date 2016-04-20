@@ -1,10 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
@@ -99,17 +96,25 @@ public class General {
         );
         backgroundImageComboBox.setPromptText("Select a background");
         backgroundImageComboBox.setEditable(true);
-        backgroundImageComboBox.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                backgroundImageFileString = backgroundImageComboBox.getSelectionModel().getSelectedItem().toString();
-                Main.borderPane.setCenter(getPreferencesScene());
-            }
+        backgroundImageComboBox.setOnAction((q) -> {
+            backgroundImageFileString = backgroundImageComboBox.getSelectionModel().getSelectedItem().toString();
+            Main.borderPane.setCenter(getPreferencesScene());
         });
         backgroundImageComboBox.setValue(backgroundImageFileString);
 
+        Text ChangeDataBaseHeader = new Text("Change database root name:");
+        TextField ChangeDatabaseField = new TextField(Main.DatabaseName);
+        ChangeDatabaseField.setMaxWidth(100);
+        ChangeDatabaseField.setOnMouseClicked((q) -> ChangeDatabaseField.selectAll());
+
+        Button ConfirmDBChange = new Button("Confirm Change");
+        ConfirmDBChange.setOnMouseClicked((q) -> {
+            Main.DatabaseName = ChangeDatabaseField.getCharacters().toString();
+            ChangeDatabaseField.setText(Main.DatabaseName);
+        });
+
         sceneView.setBackground(getBackground(sceneView.getWidth(), sceneView.getHeight()));
-        sceneView.getChildren().addAll(sceneText, staticMapBox, openInNewWindowBox, backgroundImageComboBox);
+        sceneView.getChildren().addAll(sceneText, staticMapBox, openInNewWindowBox, backgroundImageComboBox, ChangeDataBaseHeader, ChangeDatabaseField, ConfirmDBChange);
         return sceneView;
     }
 

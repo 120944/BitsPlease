@@ -38,6 +38,9 @@ public class Main extends Application {
     public static Stage stackBarChartStage;
     public static Scene stackBarChartScene;
 
+    // Setting if db name gets changed
+    public static String DatabaseName = "testtwee";
+
     public static void main(String args[]) throws MalformedURLException {
         //Default preferences
         staticMap = false;
@@ -120,37 +123,37 @@ public class Main extends Application {
         });
 
         stat3.setOnAction((q) -> {
-            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/indice", "root", "root",
+            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
                     "select * from diefstal_uit_auto", "Autodiefstal over verschillende jaren in Rotterdam",
                     "Jaar", "Cijfer"};
             if(openInNewWindow) {
                 areaChart1Stage = new Stage();
                 areaChart1Stage.setTitle("Area Chart 1");
-                areaChart1Scene = new Scene(MyAreaChart.getScene(chartInfo,0,127), width, height);
-                areaChart1Scene.setRoot(MyAreaChart.getScene(chartInfo,0,127));
+                areaChart1Scene = new Scene(MyAreaChart.getScene(chartInfo,"All"), width, height);
+                areaChart1Scene.setRoot(MyAreaChart.getScene(chartInfo,"All"));
                 areaChart1Stage.setScene(areaChart1Scene);
                 areaChart1Stage.show();
             }
             else {
-                borderPane.setCenter(MyAreaChart.getScene(chartInfo, 0, 127));
+                borderPane.setCenter(MyAreaChart.getScene(chartInfo,"All"));
             }
         });
 
         stat4.setOnAction((q) -> {
-            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/indice", "root", "root",
+            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
                     "select * from beschadiging_aan_auto",
                     "Autobeschadiging over verschillende jaren in Rotterdam",
                     "Jaar", "Cijfer"};
             if(openInNewWindow) {
                 areaChart2Stage = new Stage();
                 areaChart2Stage.setTitle("Area Chart 2");
-                areaChart2Scene = new Scene(MyAreaChart.getScene(chartInfo,0,127), width, height);
-                areaChart2Scene.setRoot(MyAreaChart.getScene(chartInfo,0,127));
+                areaChart2Scene = new Scene(MyAreaChart.getScene(chartInfo,"All"), width, height);
+                areaChart2Scene.setRoot(MyAreaChart.getScene(chartInfo,"All"));
                 areaChart2Stage.setScene(areaChart2Scene);
                 areaChart2Stage.show();
             }
             else {
-                borderPane.setCenter(MyAreaChart.getScene(chartInfo,0,127));
+                borderPane.setCenter(MyAreaChart.getScene(chartInfo,"All"));
             }
         });
 

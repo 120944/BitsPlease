@@ -8,14 +8,17 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by Lucas on 4/18/2016.
+ * Created by Lucas on 4/20/2016.
  */
 public class MyAreaChart {
+
+    private static String selectedRange;
+    private static ComboBox<String> pickRangeComboBox = new ComboBox<>();
+
     /**
      * @param chartInfo
      *  0 -> URL
@@ -25,83 +28,90 @@ public class MyAreaChart {
      *  4 -> Chart description
      *  5 -> xLabel
      *  6 -> yLabel
-     * @param minASCII
-     * @param maxASCII
+     * @param _selectedRange
+     * String containing initial or selected range
      * @return
-     * Returns the scene to be showed on screen
+     * Returns the sceneView to caller
      */
 
-    static VBox getScene(String[] chartInfo, int minASCII, int maxASCII) {
+    static VBox getScene(String[] chartInfo, String _selectedRange) {
         VBox sceneView = new VBox();
 
         ResultSet resultSet = SQL.getDBResults(chartInfo[0],chartInfo[1],chartInfo[2],chartInfo[3]);
 
-        Text sceneText = new Text();
-        sceneText.setText(chartInfo[4]);
-        sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
-        sceneText.setWrappingWidth(Main.scene.getWidth());
+        Text sceneTitle = new Text(chartInfo[4]);
+        sceneTitle.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+        sceneTitle.setWrappingWidth(Main.scene.getWidth());
 
-        Text sceneSubText = new Text();
-        sceneSubText.setText("Pick the range you like.");
+        Text rangeBoxText = new Text("Pick the filter you like.");
 
         CategoryAxis XAxis = new CategoryAxis();
         NumberAxis YAxis = new NumberAxis();
         XAxis.setLabel(chartInfo[5]);
         YAxis.setLabel(chartInfo[6]);
 
-        final AreaChart<String,Number> areaChart = new AreaChart<>(XAxis,YAxis);
+        final AreaChart<String, Number> areaChart = new AreaChart<>(XAxis,YAxis);
         areaChart.setPrefHeight(900);
 
-        ComboBox<String> pickRangeComboBox = new ComboBox<String>();
-        pickRangeComboBox.getItems().addAll(
-                "A-J",
-                "K-O",
-                "P-Z",
-                "A-Z"
-        );
-        pickRangeComboBox.setPromptText("Select a range");
+        selectedRange = _selectedRange;
+
+        pickRangeComboBox.setPromptText("Select a filter");
         pickRangeComboBox.setEditable(true);
         pickRangeComboBox.setOnAction((q) -> {
-            if(Main.openInNewWindow) {
-                Main.stackBarChartScene.setRoot(getScene(chartInfo, (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toLowerCase().charAt(2)));
+            if (Main.openInNewWindow) {
+                Main.areaChart1Scene.setRoot(getScene(chartInfo, pickRangeComboBox.getSelectionModel().getSelectedItem()));
             }
             else {
-                Main.borderPane.setCenter(getScene(chartInfo, (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toLowerCase().charAt(2)));
+                Main.borderPane.setCenter(getScene(chartInfo,pickRangeComboBox.getSelectionModel().getSelectedItem()));
             }
         });
 
-        if(minASCII == 0 && maxASCII == 127) { pickRangeComboBox.setValue("A-Z"); }
-        else { pickRangeComboBox.setValue((char) (minASCII - 32) + "-" + (char) (maxASCII - 32)); }
+        pickRangeComboBox.setValue(selectedRange);
 
-        DataToChart(resultSet,minASCII,maxASCII,areaChart);
+        DataToChart(resultSet, areaChart);
 
-        sceneView.getChildren().addAll(sceneText, sceneSubText, pickRangeComboBox, areaChart);
+        sceneView.getChildren().addAll(sceneTitle,rangeBoxText,pickRangeComboBox,areaChart);
         return sceneView;
     }
 
-    static void DataToChart(ResultSet sqlData, int minASCII, int maxASCII, AreaChart areaChart) {
-        int number = 0;
-        int passed = 0;
-        int average = 0;
+    /**
+     * @param sqlData
+     *  Data to be showed on the chart
+     * @param areaChart
+     *  Original areachart, which will be overwritten (or painted over) or changed with the passed sqlData
+     */
+
+    static void DataToChart(ResultSet sqlData, AreaChart areaChart) {
+        int number = 0, passed = 0, average = 0;
         String averageYear = "";
+
         try {
             while (sqlData.next()) {
                 String name = sqlData.getString("Gebied");
-                char firstLetter = name.toLowerCase().charAt(0);
-                int firstASCIILetter = (int) firstLetter;
+                pickRangeComboBox.getItems().add(name);
                 number++;
-                for(int i = 2; i < 7; i++) {
+
+                for (int i = 2; i < 7; i++) {
                     average += sqlData.getInt(i);
-                    averageYear = "" + (i + 2004);
+                    if (i<6) {
+                        averageYear = "" + (i + 2004);
+                    }
+                    else if (i == 6) {averageYear = "2011";}
                 }
-                if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
+                if (name.toLowerCase().equals(selectedRange.toLowerCase())) {
                     passed++;
-                    XYChart.Series series = new XYChart.Series();
-                    for (int i = 2; i < 7; i++) {
-                        String year = "" + (i + 2004);
+                    XYChart.Series series = new XYChart.Series<>();
+                    for (int j = 2; j < 7; j++) {
+                        String year = "";
+                        if (j<6) {
+                            year = "" + (j + 2004);
+                        }
+                        else if (j == 6) {year = "2011";}
+
                         try {
-                            series.getData().add(new XYChart.Data(year, sqlData.getInt(i)));
-                        } catch (SQLException e) {
+                            series.getData().add(new XYChart.Data(year, sqlData.getInt(j)));
+                        }
+                        catch (SQLException e) {
                             e.printStackTrace();
                         }
                     }
@@ -110,11 +120,10 @@ public class MyAreaChart {
                 }
             }
             average /= number;
-            XYChart.Series averageSeries = new XYChart.Series();
+            XYChart.Series averageSeries = new XYChart.Series<>();
             averageSeries.getData().add(new XYChart.Data(averageYear, average));
             averageSeries.setName("Rotterdam Average");
             areaChart.getData().add(averageSeries);
-            average = 0;
         }
         catch (SQLException e) {
             e.printStackTrace();
