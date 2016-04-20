@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Lucas on 4/20/2016.
@@ -17,7 +18,7 @@ import java.sql.SQLException;
 public class MyAreaChart {
 
     private static String selectedRange;
-    private static ComboBox<String> pickRangeComboBox = new ComboBox<>();
+    public static ArrayList<String> nameList = new ArrayList<>();
 
     /**
      * @param chartInfo
@@ -36,7 +37,7 @@ public class MyAreaChart {
 
     static VBox getScene(String[] chartInfo, String _selectedRange) {
         VBox sceneView = new VBox();
-
+        ComboBox<String> pickRangeComboBox = new ComboBox<>();
         ResultSet resultSet = SQL.getDBResults(chartInfo[0],chartInfo[1],chartInfo[2],chartInfo[3]);
 
         Text sceneTitle = new Text(chartInfo[4]);
@@ -56,7 +57,7 @@ public class MyAreaChart {
         selectedRange = _selectedRange;
 
         pickRangeComboBox.setPromptText("Select a filter");
-        pickRangeComboBox.setEditable(true);
+        pickRangeComboBox.setEditable(false);
         pickRangeComboBox.setOnAction((q) -> {
             if (Main.openInNewWindow) {
                 Main.areaChart1Scene.setRoot(getScene(chartInfo, pickRangeComboBox.getSelectionModel().getSelectedItem()));
@@ -68,7 +69,10 @@ public class MyAreaChart {
 
         pickRangeComboBox.setValue(selectedRange);
 
-        DataToChart(resultSet, areaChart);
+        DataToChart(resultSet, areaChart, pickRangeComboBox);
+        for(int i = 0; i < nameList.size(); i++) {
+            pickRangeComboBox.getItems().add(nameList.get(i));
+        }
 
         sceneView.getChildren().addAll(sceneTitle,rangeBoxText,pickRangeComboBox,areaChart);
         return sceneView;
@@ -81,14 +85,14 @@ public class MyAreaChart {
      *  Original areachart, which will be overwritten (or painted over) or changed with the passed sqlData
      */
 
-    static void DataToChart(ResultSet sqlData, AreaChart areaChart) {
+    static void DataToChart(ResultSet sqlData, AreaChart areaChart, ComboBox pickRangeComboBox) {
         int number = 0, passed = 0, average = 0;
         String averageYear = "";
 
         try {
             while (sqlData.next()) {
                 String name = sqlData.getString("Gebied");
-                pickRangeComboBox.getItems().add(name);
+                nameList.add(name);
                 number++;
 
                 for (int i = 2; i < 7; i++) {

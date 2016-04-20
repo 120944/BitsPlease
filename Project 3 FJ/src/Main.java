@@ -20,6 +20,8 @@ public class Main extends Application {
     public static boolean openInNewWindow;
     public static BorderPane borderPane;
 
+    public static Stage primaryStage;
+
     public static Stage mapStage;
     public static Scene mapScene;
 
@@ -39,7 +41,7 @@ public class Main extends Application {
     public static Scene stackBarChartScene;
 
     // Setting if db name gets changed
-    public static String DatabaseName = "testtwee";
+    public static String DatabaseName = "Crime_per_area";
 
     public static void main(String args[]) throws MalformedURLException {
         //Default preferences
@@ -98,13 +100,13 @@ public class Main extends Application {
             if(openInNewWindow) {
                 mapStage = new Stage();
                 mapStage.setTitle("Map");
-                mapScene = new Scene(Map.getScene(), width, height);
-                mapScene.setRoot(Map.getScene());
+                mapScene = new Scene(MapChart1.getScene(), width, height);
+                mapScene.setRoot(MapChart1.getScene());
                 mapStage.setScene(mapScene);
                 mapStage.show();
             }
             else {
-                borderPane.setCenter(Map.getScene());
+                borderPane.setCenter(MapChart1.getScene());
             }
         });
 
@@ -112,13 +114,13 @@ public class Main extends Application {
             if(openInNewWindow) {
                 pieChartStage = new Stage();
                 pieChartStage.setTitle("Pie Chart");
-                pieChartScene = new Scene(PieChart1.getScene(), width, height);
-                pieChartScene.setRoot(PieChart1.getScene());
+                pieChartScene = new Scene(PieChart1.getScene("Afrikaanderwijk"), width, height);
+                pieChartScene.setRoot(PieChart1.getScene("Afrikaanderwijk"));
                 pieChartStage.setScene(pieChartScene);
                 pieChartStage.show();
             }
             else {
-                borderPane.setCenter(PieChart1.getScene());
+                borderPane.setCenter(PieChart1.getScene("Afrikaanderwijk"));
             }
         });
 

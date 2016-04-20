@@ -10,21 +10,14 @@ import com.maxmind.geoip.Location;
 import com.maxmind.geoip.LookupService;
 
 //JavaFX
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 //JSON
-import jdk.nashorn.internal.scripts.JO;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -44,6 +37,9 @@ import org.apache.commons.io.IOUtils;
 //ImageHandling
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -63,6 +59,7 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
     public static JSONArray garageArray;
     public static String origin;
     public static String destination;
+    public static VBox mapViewVBox;
     static GoogleMapView mapView;
     GoogleMap map;
     protected DirectionsPane directions;
@@ -226,16 +223,16 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
                     LatLong latLongDestination = new LatLong(latitude, longitude);
                     Marker marker = new Marker(new MarkerOptions().position(new LatLong(latitude, longitude)).title(name).visible(true));
                     map.addMarker(marker);
-                    InfoWindow info = new InfoWindow(new InfoWindowOptions().content("<p>" + name + "</p"));
+                    InfoWindow info = new InfoWindow(new InfoWindowOptions().content("<p>" + name + "</p>"));
                     info.setPosition(new LatLong(latitude, longitude));
                     map.addUIEventHandler(marker, UIEventType.click, (JSObject obj) -> {
                         info.open(map);
+                        chartDisplay(getGarageArea(name));
                         try {
                             DirectionsRequest dr = new DirectionsRequest(
                                     coordinatesToAddress(ipLocation.latitude, ipLocation.longitude),
                                     coordinatesToAddress(latitude.floatValue(), longitude.floatValue()),
-                                    TravelModes.DRIVING,
-                                    dw);
+                                    TravelModes.DRIVING, dw);
                             ds.getRoute(dr, this, renderer);
                         } catch (IOException | ParseException e) {
                             e.printStackTrace();
@@ -244,6 +241,35 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
                 }
             }
         }
+    }
+
+    //Gets the area where the parkinggarage is located
+    public String getGarageArea(String garageName) {
+        ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/Crime_per_area", "root", "root", "select Gebied from parkeergarages WHERE GarageNaam='" + garageName + "'");
+        try {
+            while(results.next()) {
+                return results.getString("Gebied");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //Displays the correct piechart for the area in a subview
+    public void chartDisplay(String areaName) {
+        VBox subScene = new VBox();
+
+        Button closeButton = new Button();
+        closeButton.setText("X");
+        closeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                mapViewVBox.getChildren().remove(subScene);
+            }
+        });
+        subScene.getChildren().addAll(closeButton, PieChart1.getSubScene(areaName));
+        mapViewVBox.getChildren().add(subScene);
     }
 
     //Handles received directions
@@ -292,97 +318,5 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
             e.printStackTrace();
         }
         return location;
-    }
-
-    //Draws the Map-scene
-    public static VBox getScene() {
-        map();
-        VBox mapViewVBox = new VBox(8);
-
-        if(Main.staticMap) {
-            //Sets up the buttons and labels
-            mapViewVBox.setPadding(new Insets(10, 10, 10, 10));
-            Button zoomInButton = new Button();
-            Button zoomOutButton = new Button();
-            zoomInButton.setText("+");
-            zoomOutButton.setText("-");
-
-            Label originLabel = new Label();
-            Label destinationLabel = new Label();
-            originLabel.setText(geoIPLookUp().city);
-            destinationLabel.setText(destination);
-
-            //Creates and instantiates the ImageView, sets the image in the view
-            final ImageView image2 = new ImageView();
-            image2.setPreserveRatio(true);
-            image2.setFitWidth(Main.width);
-            image2.setSmooth(true);
-            image2.setCache(true);
-            if (scene != null) {
-                image2.setViewport(new Rectangle2D(0, 0, scene.getWidth(), scene.getHeight()));
-            }
-            image2.setImage(mapImage);
-            mapViewVBox.getChildren().addAll(zoomInButton, zoomOutButton, originLabel, destinationLabel, image2);
-
-            //Zooms the ImageMapView in
-            zoomInButton.setOnAction((q) -> {
-                    zoom++;
-                    map();
-                    image2.setImage(mapImage);
-            });
-
-            //Zooms the ImageMapView out
-            zoomOutButton.setOnAction((q) -> {
-                zoom--;
-                map();
-                image2.setImage(mapImage);
-            });
-        }
-        else {
-            mapView = new GoogleMapView();
-            mapView.addMapInializedListener(new Map());
-            mapView.setPrefSize(Main.width, Main.height);
-            mapViewVBox.setAlignment(Pos.CENTER);
-            mapViewVBox.getChildren().addAll(mapView);
-        }
-
-        //Listeners for screen resize events
-        if(Main.staticMap) {
-            Main.scene.widthProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldSceneWidth, Number newSceneWidth) {
-                    if ((Double) newSceneWidth > Main.scene.heightProperty().getValue()) {
-                        image2.setFitWidth((Double) newSceneWidth);
-                    }
-                }
-            });
-            Main.scene.heightProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldSceneHeight, Number newSceneHeight) {
-                    if ((Double) newSceneHeight > Main.scene.widthProperty().getValue()) {
-                        image2.setFitHeight((Double) newSceneHeight);
-                    }
-                }
-            });
-        }
-        else {
-            Main.scene.widthProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldSceneWidth, Number newSceneWidth) {
-                    if ((Double) newSceneWidth > Main.scene.heightProperty().getValue()) {
-                        mapView.setPrefSize((Double) newSceneWidth, Main.height);
-                    }
-                }
-            });
-            Main.scene.heightProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldSceneHeight, Number newSceneHeight) {
-                    if ((Double) newSceneHeight > Main.scene.widthProperty().getValue()) {
-                        mapView.setPrefSize(Main.width, (Double) newSceneHeight);
-                    }
-                }
-            });
-        }
-        return mapViewVBox;
     }
 }

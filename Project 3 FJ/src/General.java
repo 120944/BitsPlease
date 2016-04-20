@@ -1,5 +1,3 @@
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -87,6 +85,7 @@ public class General {
         });
 
         ComboBox backgroundImageComboBox = new ComboBox();
+        backgroundImageComboBox.setEditable(false);
         backgroundImageComboBox.getItems().addAll(
                 "None",
                 "Background 1.png",
