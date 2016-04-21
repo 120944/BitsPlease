@@ -10,11 +10,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-/**
- * Created by floris-jan on 21-04-16.
- */
 public class MapChart2 {
     //Draws the Map-scene
+
+    /**
+     *
+     * @param yearString
+     * @return
+     */
     public static VBox getScene(String yearString) {
         int year = Integer.parseInt(yearString);
         ComboBox<String> pickYearComboBox = new ComboBox<>();

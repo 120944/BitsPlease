@@ -31,9 +31,6 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by floris-jan on 21-04-16.
- */
 public class Map2 implements MapComponentInitializedListener, DirectionsServiceCallback {
     public static URL imageUrl;
     public static Image mapImage;
@@ -55,6 +52,11 @@ public class Map2 implements MapComponentInitializedListener, DirectionsServiceC
     public static int year;
 
     //Gets the Interactive or Static Google Map, applies all of the necessary elements (Markers, waypoints, routes etc.), possibly from external sources (internet)
+
+    /**
+     *
+     * @param yearParameter
+     */
     public static void map(int yearParameter) {
         //default
         BufferedImage bufferedImage = null;

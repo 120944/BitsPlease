@@ -1,6 +1,3 @@
-/**
- * Created by Lucas on 4/21/2016.
- */
 public class ChartInfo {
     private String dbURL;
     private String dbUsername;
@@ -12,6 +9,15 @@ public class ChartInfo {
     private String rangeSelector;
 
     // PieChart
+
+    /**
+     *
+     * @param dbURL
+     * @param dbUsername
+     * @param dbPassword
+     * @param dbQuery
+     * @param rangeSelector
+     */
     public ChartInfo(String dbURL, String dbUsername, String dbPassword, String dbQuery, String rangeSelector) {
         this.dbURL = dbURL;
         this.dbUsername = dbUsername;
@@ -21,6 +27,18 @@ public class ChartInfo {
     }
 
     // AreaChart
+
+    /**
+     *
+     * @param dbURL
+     * @param dbUsername
+     * @param dbPassword
+     * @param dbQuery
+     * @param chartDesc
+     * @param xLabel
+     * @param yLabel
+     * @param rangeSelector
+     */
     public ChartInfo(String dbURL, String dbUsername, String dbPassword, String dbQuery, String chartDesc, String xLabel, String yLabel, String rangeSelector) {
         this.dbURL = dbURL;
         this.dbUsername = dbUsername;
@@ -30,14 +48,6 @@ public class ChartInfo {
         this.xLabel = xLabel;
         this.yLabel = yLabel;
         this.rangeSelector = rangeSelector;
-    }
-
-    // Map
-    public ChartInfo(String dbURL, String dbUsername, String dbPassword, String dbQuery) {
-        this.dbURL = dbURL;
-        this.dbUsername = dbUsername;
-        this.dbPassword = dbPassword;
-        this.dbQuery = dbQuery;
     }
 
     public String getDbURL() {

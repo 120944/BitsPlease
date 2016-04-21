@@ -43,9 +43,6 @@ import java.sql.SQLException;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-/**
- * Created by floris-jan on 14-04-16.
- */
 public class Map implements MapComponentInitializedListener, DirectionsServiceCallback {
 
     public static URL imageUrl;

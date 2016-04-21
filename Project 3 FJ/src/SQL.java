@@ -3,10 +3,17 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * Created by floris-jan on 14-04-16.
- */
 public class SQL {
+    //Gets the SQL-data
+
+    /**
+     *
+     * @param dataBaseUrl
+     * @param user
+     * @param password
+     * @param query
+     * @return
+     */
     public static ResultSet getDBResults(String dataBaseUrl, String user, String password, String query) {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();

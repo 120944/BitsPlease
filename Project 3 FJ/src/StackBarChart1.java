@@ -16,11 +16,15 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- * Created by floris-jan on 14-04-16.
- */
 public class StackBarChart1 {
     //Draws the Stacked Barchart-scene
+
+    /**
+     *
+     * @param problemName
+     * @param average
+     * @return
+     */
     public static VBox getScene(String problemName, Boolean average) {
         VBox sceneView = new VBox();
         sceneView.setPadding(new Insets(10,10,10,10));

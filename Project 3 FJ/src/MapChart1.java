@@ -9,9 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-/**
- * Created by floris-jan on 21-04-16.
- */
 public class MapChart1 {
     //Draws the Map-scene
     public static VBox getScene() {

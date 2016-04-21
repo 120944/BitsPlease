@@ -12,12 +12,16 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-/**
- * Created by Lucas on 4/21/2016.
- */
 public class PieChartX {
 
     //Draws the Pie Chart scene
+
+    /**
+     *
+     * @param chartInfo
+     * @param splitScreen
+     * @return
+     */
     static VBox getScene(ChartInfo chartInfo, Boolean splitScreen) {
         VBox sceneView = new VBox();
         sceneView.setPadding(new Insets(10,10,10,10));

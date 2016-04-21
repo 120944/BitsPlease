@@ -9,12 +9,15 @@ import javafx.scene.text.TextAlignment;
 import java.io.File;
 import java.util.Optional;
 
-/**
- * Created by floris-jan on 14-04-16.
- */
+
 public class General {
     public static String backgroundImageFileString;
     //Returns the Welcome-scene
+
+    /**
+     *
+     * @return
+     */
     public static VBox getStartScene() {
         VBox startView = new VBox();
         startView.setPrefSize(Main.width, Main.height);

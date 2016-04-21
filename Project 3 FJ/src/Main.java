@@ -11,10 +11,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import java.net.*;
 
-/**
- * Created by floris-jan on 05-04-16.
- */
-
 public class Main extends Application {
 
     public static int width;
@@ -45,6 +41,11 @@ public class Main extends Application {
     // Setting if db name gets changed
     public static String DatabaseName = "Database";
 
+    /**
+     *
+     * @param args
+     * @throws MalformedURLException
+     */
     public static void main(String args[]) throws MalformedURLException {
         //Default preferences
         staticMap = false;
@@ -54,6 +55,11 @@ public class Main extends Application {
         launch();
     }
 
+    /**
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     //Creates, initiates and draws the window and all of its elements
     @Override
     public void start(Stage primaryStage) throws Exception {
