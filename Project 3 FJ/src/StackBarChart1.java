@@ -1,8 +1,10 @@
 import javafx.collections.FXCollections;
+import javafx.geometry.Insets;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -10,90 +12,125 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Created by floris-jan on 14-04-16.
  */
 public class StackBarChart1 {
     //Draws the Stacked Barchart-scene
-    public static VBox getScene(int minASCII, int maxASCII) {
+    public static VBox getScene(String problemName, Boolean average) {
         VBox sceneView = new VBox();
-        sceneView.setPrefSize(1440, 900);
-        ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "select * from all_crimes");
+        sceneView.setPadding(new Insets(10,10,10,10));
+        ResultSet results;
+
+        ComboBox<String> pickAreaComboBox = new ComboBox<>();
+        pickAreaComboBox.setPromptText("Select a filter");
+        pickAreaComboBox.setEditable(false);
+
+        CheckBox averageBox = null;
+        if(problemName == "Alle situaties") {
+            results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "SELECT * FROM all_crimes_transposed");
+            averageBox = new CheckBox();
+            averageBox.setText("Average");
+            if(average) { averageBox.setSelected(true); }
+            averageBox.setOnAction((q) -> {
+                if(average) {
+                    if (Main.openInNewWindow) {
+                        Main.stackBarChartScene.setRoot(getScene(pickAreaComboBox.getSelectionModel().getSelectedItem().toString(), false));
+                    } else {
+                        Main.borderPane.setCenter(getScene(pickAreaComboBox.getSelectionModel().getSelectedItem().toString(), false));
+                    }
+                } else {
+                    if (Main.openInNewWindow) {
+                        Main.stackBarChartScene.setRoot(getScene(pickAreaComboBox.getSelectionModel().getSelectedItem().toString(), true));
+                    } else {
+                        Main.borderPane.setCenter(getScene(pickAreaComboBox.getSelectionModel().getSelectedItem().toString(), true));
+                    }
+                }
+            });
+        } else {
+            results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "SELECT * FROM all_crimes_transposed WHERE Crime='" + problemName + "'");
+        }
 
         Text sceneText = new Text();
-        sceneText.setText("Aandelen in buurtproblemen per buurt");
+        sceneText.setText("Aandelen in situaties per buurt");
         sceneText.setFont(Font.font("null", FontWeight.MEDIUM, 40));
         sceneText.setWrappingWidth(Main.scene.getWidth());
-
-        String item1 = "buurtprobleem fietsendiefstal";
-        String item2 = "buurtprobleem diefstal uit de auto";
-        String item3 = "buurtprobleem beschadiging / diefstal auto";
-        String item4 = "slachtofferschap autodiefstal";
 
         CategoryAxis XAxis = new CategoryAxis();
         NumberAxis YAxis = new NumberAxis();
         final StackedBarChart<String, Number> barChart = new StackedBarChart(XAxis, YAxis);
-        barChart.setTitle("Sith Stuff. Because Sith rock.");
-        XAxis.setLabel("Probleem");
+        barChart.setMinSize(Main.scene.getWidth(), 750);
+        XAxis.setLabel("Wijk");
         YAxis.setLabel("Index");
-        XAxis.setCategories(FXCollections.observableArrayList(Arrays.asList(
-                item1,
-                item2,
-                item3,
-                item4
-        )));
+        YAxis.maxHeight(200);
+        ArrayList<String> arrayList = new ArrayList<>();
 
-        //You can simply change the letters in these Strings to change the ranges
-        ComboBox pickRangeComboBox = new ComboBox();
-        pickRangeComboBox.getItems().addAll(
-                "A-J",
-                "K-O",
-                "P-Z",
-                "A-Z"
-        );
-        pickRangeComboBox.setPromptText("Select a range");
-        pickRangeComboBox.setEditable(true);
-        pickRangeComboBox.setOnAction((q) -> {
-                if(Main.openInNewWindow) {
-                    Main.stackBarChartScene.setRoot(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
-                }
-                else {
-                    Main.borderPane.setCenter(getScene((int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(0), (int) pickRangeComboBox.getSelectionModel().getSelectedItem().toString().toLowerCase().charAt(2)));
-                }
-        });
-        if(minASCII == 0 && maxASCII == 127) { pickRangeComboBox.setValue("A-Z"); }
-        else { pickRangeComboBox.setValue((char) (minASCII - 32) + "-" + (char) (maxASCII - 32)); }
+        ResultSet allResults = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "select * from all_crimes");
+        ResultSetMetaData allResultsMetaData;
+        ResultSetMetaData resultsMetaData;
 
         try {
-            int deb = 0;
-            while (results.next()) {
-                String name = results.getString("Gebied").replaceAll("\n", "");
-                System.err.println(name + deb);
-                char firstLetter = name.toLowerCase().charAt(0);
-                deb++;
-                int firstASCIILetter = (int) firstLetter;
-                if(firstASCIILetter >= minASCII && firstASCIILetter <= maxASCII) {
-                    XYChart.Series series = new XYChart.Series();
-                    for (int i = 2; i < 6; i++) {
-                        try {
-                            series.getData().add(new XYChart.Data(XAxis.getCategories().get(i - 2), results.getInt(i)));
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
+            allResultsMetaData = allResults.getMetaData();
+            resultsMetaData = results.getMetaData();
+            pickAreaComboBox.getItems().add("Alle situaties");
+
+            if(problemName == "Alle situaties") {
+                for(int i = 2; i < results.getMetaData().getColumnCount(); i++) {
+                    int count = 0;
+                    int sum = 0;
+                    while(results.next()) {
+                        count++;
+                        sum += results.getInt(i);
                     }
-                    series.setName(name);
+                    results.beforeFirst();
+                    XYChart.Series series = new XYChart.Series();
+                    String name = resultsMetaData.getColumnName(i);
+                    arrayList.add("" + i);
+                    if(average) { series.getData().add(new XYChart.Data("" + i, sum/count)); }
+                    else { series.getData().add(new XYChart.Data("" + i, sum)); }
+                    series.setName(i + ", " + name);
                     barChart.getData().add(series);
                 }
             }
-        }
-        catch (SQLException e) {
+
+            for(int i = 2; i < allResultsMetaData.getColumnCount(); i++) {
+                pickAreaComboBox.getItems().add(allResultsMetaData.getColumnName(i).replaceAll("\n", ""));
+            }
+
+            if(problemName != "Alle situaties") {
+                while (results.next()) {
+                    for (int i = 2; i < resultsMetaData.getColumnCount(); i++) {
+                        XYChart.Series series = new XYChart.Series();
+                        String name = resultsMetaData.getColumnName(i);
+                        arrayList.add("" + i);
+                        series.getData().add(new XYChart.Data("" + i, results.getInt(i)));
+                        series.setName(i + ", " + name);
+                        barChart.getData().add(series);
+                    }
+                }
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        sceneView.getChildren().addAll(sceneText, pickRangeComboBox, barChart);
+        XAxis.setCategories(FXCollections.observableArrayList(arrayList));
+
+        pickAreaComboBox.setOnAction((q) -> {
+                if(Main.openInNewWindow) {
+                    Main.stackBarChartScene.setRoot(getScene(pickAreaComboBox.getSelectionModel().getSelectedItem().toString(), average));
+                }
+                else {
+                    Main.borderPane.setCenter(getScene(pickAreaComboBox.getSelectionModel().getSelectedItem().toString(), average));
+                }
+        });
+        pickAreaComboBox.setValue(problemName);
+
+        sceneView.getChildren().addAll(sceneText, pickAreaComboBox, barChart);
+        if(problemName == "Alle situaties") { sceneView.getChildren().add(averageBox); }
         return sceneView;
     }
 }

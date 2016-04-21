@@ -1,5 +1,9 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -20,8 +24,6 @@ public class Main extends Application {
     public static boolean openInNewWindow;
     public static BorderPane borderPane;
 
-    public static Stage primaryStage;
-
     public static Stage mapStage;
     public static Scene mapScene;
 
@@ -34,14 +36,14 @@ public class Main extends Application {
     public static Stage areaChart2Stage;
     public static Scene areaChart2Scene;
 
-    public static Stage barChartStage;
-    public static Scene barChartScene;
+    public static Stage pieChart2Stage;
+    public static Scene pieChart2Scene;
 
     public static Stage stackBarChartStage;
     public static Scene stackBarChartScene;
 
     // Setting if db name gets changed
-    public static String DatabaseName = "Crime_per_area";
+    public static String DatabaseName = "Database";
 
     public static void main(String args[]) throws MalformedURLException {
         //Default preferences
@@ -71,15 +73,16 @@ public class Main extends Application {
         MenuItem quit = new MenuItem("Quit");
 
         MenuItem start = new MenuItem("Start");
-        MenuItem stat1 = new MenuItem("Map Stats");
-        MenuItem stat2 = new MenuItem("Pie Chart");
-        MenuItem stat3 = new MenuItem("Autodiefstal");
-        MenuItem stat4 = new MenuItem("Autobeschadiging");
-        MenuItem stat5 = new MenuItem("Barchart");
-        MenuItem stat6 = new MenuItem("Stacked Barchart");
+        MenuItem stat1 = new MenuItem("Question 1: Misdaad per buurt");
+        MenuItem stat2 = new MenuItem("Question 2: Autodiefstal");
+        MenuItem stat3 = new MenuItem("Question 2: Autobeschadiging");
+        MenuItem stat4 = new MenuItem("Question 3: Vergelijking met Rotterdam");
+        MenuItem stat5 = new MenuItem("Question 4: Problemen per buurt");
+        MenuItem stat6 = new MenuItem("Question 5: Statistieken parkeerplaatsen");
+        MenuItem stat7 = new MenuItem("Question 5: Voertuigveiligheidskaart");
 
         general.getItems().addAll(help, preferences, about, quit);
-        statistics.getItems().addAll(start, stat1,stat2,stat3,stat4,stat5,stat6);
+        statistics.getItems().addAll(start, stat1,stat2,stat3,stat4,stat5,stat6,stat7);
         menuBar.getMenus().addAll(general, statistics);
         borderPane.setTop(menuBar);
         borderPane.setCenter(General.getStartScene());
@@ -97,6 +100,96 @@ public class Main extends Application {
         start.setOnAction((q) -> borderPane.setCenter(General.getStartScene()));
 
         stat1.setOnAction((q) -> {
+            ChartInfo chartInfo = new ChartInfo(
+                    "jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
+                    "select * from all_crimes_transposed WHERE all_crimes_transposed.Crime != \"tevredenheid met het wonen in de buurt\"", "Rotterdam");
+            if(openInNewWindow) {
+                pieChartStage = new Stage();
+                pieChartStage.setTitle("Pie Chart");
+                pieChartScene = new Scene(PieChartX.getScene(chartInfo, false), width, height);
+                pieChartScene.setRoot(PieChartX.getScene(chartInfo, false));
+                pieChartStage.setScene(pieChartScene);
+                pieChartStage.show();
+            }
+            else {
+                borderPane.setCenter(PieChartX.getScene(chartInfo, false));
+            }
+        });
+
+        stat2.setOnAction((q) -> {
+            ChartInfo chartInfo = new ChartInfo("jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
+                    "select * from diefstal_uit_auto", "Autodiefstal over verschillende jaren in Rotterdam",
+                    "Jaar", "Cijfer", "All");
+            if(openInNewWindow) {
+                areaChart1Stage = new Stage();
+                areaChart1Stage.setTitle("Area Chart 1");
+                areaChart1Scene = new Scene(AreaChartX.getScene(chartInfo), width, height);
+                areaChart1Scene.setRoot(AreaChartX.getScene(chartInfo));
+                areaChart1Stage.setScene(areaChart1Scene);
+                areaChart1Stage.show();
+            }
+            else {
+                borderPane.setCenter(AreaChartX.getScene(chartInfo));
+            }
+        });
+
+        stat3.setOnAction((q) -> {
+            ChartInfo chartInfo = new ChartInfo("jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
+                    "select * from beschadiging_aan_auto",
+                    "Autobeschadiging over verschillende jaren in Rotterdam",
+                    "Jaar", "Cijfer", "All");
+            if(openInNewWindow) {
+                areaChart2Stage = new Stage();
+                areaChart2Stage.setTitle("Area Chart 2");
+                areaChart2Scene = new Scene(AreaChartX.getScene(chartInfo), width, height);
+                areaChart2Scene.setRoot(AreaChartX.getScene(chartInfo));
+                areaChart2Stage.setScene(areaChart2Scene);
+                areaChart2Stage.show();
+            }
+            else {
+                borderPane.setCenter(AreaChartX.getScene(chartInfo));
+            }
+        });
+
+        stat4.setOnAction((q) -> {
+            ChartInfo chartInfo = new ChartInfo(
+                    "jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
+                    "select * from all_crimes_transposed WHERE all_crimes_transposed.Crime != \"tevredenheid met het wonen in de buurt\"", "Rotterdam");
+            VBox vbox = new VBox();
+            Text text = new Text();
+            text.setText("Compare the piecharts here.");
+            text.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+            text.setWrappingWidth(Main.scene.getWidth());
+            vbox.getChildren().addAll(text, PieChartX.getScene(chartInfo, true), PieChartX.getScene(chartInfo, true));
+            if(openInNewWindow) {
+                pieChart2Stage = new Stage();
+                pieChart2Stage.setTitle("Area Chart 2");
+                pieChart2Scene = new Scene(vbox, width, height);
+                pieChart2Scene.setRoot(PieChartX.getScene(chartInfo, true));
+                pieChart2Stage.setScene(pieChart2Scene);
+                pieChart2Stage.show();
+            }
+            else {
+                borderPane.setCenter(vbox);
+            }
+        });
+
+
+        stat5.setOnAction((q) -> {
+            if(openInNewWindow) {
+                stackBarChartStage = new Stage();
+                stackBarChartStage.setTitle("Stacked Bar Chart");
+                stackBarChartScene = new Scene(StackBarChart1.getScene("buurtprobleem fietsendiefstal", false), width, height);
+                stackBarChartScene.setRoot(StackBarChart1.getScene("buurtprobleem fietsendiefstal", false));
+                stackBarChartStage.setScene(stackBarChartScene);
+                stackBarChartStage.show();
+            }
+            else {
+                borderPane.setCenter(StackBarChart1.getScene("buurtprobleem fietsendiefstal", false));
+            }
+        });
+
+        stat6.setOnAction((q) -> {
             if(openInNewWindow) {
                 mapStage = new Stage();
                 mapStage.setTitle("Map");
@@ -110,80 +203,18 @@ public class Main extends Application {
             }
         });
 
-        stat2.setOnAction((q) -> {
+        stat7.setOnAction((q) -> {
+            String year = 2006 + "";
             if(openInNewWindow) {
-                pieChartStage = new Stage();
-                pieChartStage.setTitle("Pie Chart");
-                pieChartScene = new Scene(PieChart1.getScene("Afrikaanderwijk"), width, height);
-                pieChartScene.setRoot(PieChart1.getScene("Afrikaanderwijk"));
-                pieChartStage.setScene(pieChartScene);
-                pieChartStage.show();
+                mapStage = new Stage();
+                mapStage.setTitle("Map");
+                mapScene = new Scene(MapChart2.getScene(year), width, height);
+                mapScene.setRoot(MapChart2.getScene(year));
+                mapStage.setScene(mapScene);
+                mapStage.show();
             }
             else {
-                borderPane.setCenter(PieChart1.getScene("Afrikaanderwijk"));
-            }
-        });
-
-        stat3.setOnAction((q) -> {
-            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
-                    "select * from diefstal_uit_auto", "Autodiefstal over verschillende jaren in Rotterdam",
-                    "Jaar", "Cijfer"};
-            if(openInNewWindow) {
-                areaChart1Stage = new Stage();
-                areaChart1Stage.setTitle("Area Chart 1");
-                areaChart1Scene = new Scene(MyAreaChart.getScene(chartInfo,"All"), width, height);
-                areaChart1Scene.setRoot(MyAreaChart.getScene(chartInfo,"All"));
-                areaChart1Stage.setScene(areaChart1Scene);
-                areaChart1Stage.show();
-            }
-            else {
-                borderPane.setCenter(MyAreaChart.getScene(chartInfo,"All"));
-            }
-        });
-
-        stat4.setOnAction((q) -> {
-            String[] chartInfo = {"jdbc:mysql://127.0.0.1:3306/" + DatabaseName, "root", "root",
-                    "select * from beschadiging_aan_auto",
-                    "Autobeschadiging over verschillende jaren in Rotterdam",
-                    "Jaar", "Cijfer"};
-            if(openInNewWindow) {
-                areaChart2Stage = new Stage();
-                areaChart2Stage.setTitle("Area Chart 2");
-                areaChart2Scene = new Scene(MyAreaChart.getScene(chartInfo,"All"), width, height);
-                areaChart2Scene.setRoot(MyAreaChart.getScene(chartInfo,"All"));
-                areaChart2Stage.setScene(areaChart2Scene);
-                areaChart2Stage.show();
-            }
-            else {
-                borderPane.setCenter(MyAreaChart.getScene(chartInfo,"All"));
-            }
-        });
-
-        stat5.setOnAction((q) -> {
-            if(openInNewWindow) {
-                barChartStage = new Stage();
-                barChartStage.setTitle("Bar Chart");
-                barChartScene = new Scene(BarChart1.getScene(), width, height);
-                barChartScene.setRoot(BarChart1.getScene());
-                barChartStage.setScene(barChartScene);
-                barChartStage.show();
-            }
-            else {
-                borderPane.setCenter(BarChart1.getScene());
-            }
-        });
-
-        stat6.setOnAction((q) -> {
-            if(openInNewWindow) {
-                stackBarChartStage = new Stage();
-                stackBarChartStage.setTitle("Stacked Bar Chart");
-                stackBarChartScene = new Scene(StackBarChart1.getScene(0,127), width, height);
-                stackBarChartScene.setRoot(StackBarChart1.getScene(0,127));
-                stackBarChartStage.setScene(stackBarChartScene);
-                stackBarChartStage.show();
-            }
-            else {
-                borderPane.setCenter(StackBarChart1.getScene(0, 127));
+                borderPane.setCenter(MapChart2.getScene(year));
             }
         });
 

@@ -1,53 +1,40 @@
-//GMapsFX
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
 import com.lynden.gmapsfx.service.directions.*;
-
-//GeoIP
+import com.lynden.gmapsfx.shapes.Circle;
 import com.maxmind.geoip.Location;
 import com.maxmind.geoip.LookupService;
-
-//JavaFX
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-
-//JSON
+import netscape.javascript.JSObject;
+import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-//Connecting
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.InetAddress;
 import java.net.URL;
-import netscape.javascript.JSObject;
-
-/* Uses apache commons version: 2.4 */
-import org.apache.commons.io.IOUtils;
-
-//ImageHandling
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 /**
- * Created by floris-jan on 14-04-16.
+ * Created by floris-jan on 21-04-16.
  */
-public class Map implements MapComponentInitializedListener, DirectionsServiceCallback {
-
+public class Map2 implements MapComponentInitializedListener, DirectionsServiceCallback {
     public static URL imageUrl;
     public static Image mapImage;
     public static ImageView image2;
@@ -64,11 +51,14 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
     GoogleMap map;
     protected DirectionsPane directions;
     DirectionsRenderer renderer;
+    public Circle circle;
+    public static int year;
 
     //Gets the Interactive or Static Google Map, applies all of the necessary elements (Markers, waypoints, routes etc.), possibly from external sources (internet)
-    public static void map() {
+    public static void map(int yearParameter) {
         //default
         BufferedImage bufferedImage = null;
+        year = yearParameter;
         ipLocation = geoIPLookUp();
         try {
             bufferedImage = ImageIO.read(new File("maps-icon.png")); //default fallback
@@ -208,10 +198,6 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
         DirectionsService ds = new DirectionsService();
         renderer = new DirectionsRenderer(true, map, directions);
 
-        DirectionsWaypoint[] dw = new DirectionsWaypoint[0];
-//        dw[0] = new DirectionsWaypoint("Utrecht");
-//        dw[1] = new DirectionsWaypoint("Eindhoven");
-
         for(int i = 0; i < garageArray.size(); i++){
             JSONObject garage = (JSONObject) garageArray.get(i);
             String name = (String) garage.get("name");
@@ -223,16 +209,19 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
                     LatLong latLongDestination = new LatLong(latitude, longitude);
                     Marker marker = new Marker(new MarkerOptions().position(new LatLong(latitude, longitude)).title(name).visible(true));
                     map.addMarker(marker);
+                    circle = new Circle();
+                    circle.setCenter(latLongDestination);
+                    circle.setRadius(25 * getIndex(name, year));
+                    map.addMapShape(circle);
                     InfoWindow info = new InfoWindow(new InfoWindowOptions().content("<p>" + name + "</p>"));
                     info.setPosition(new LatLong(latitude, longitude));
                     map.addUIEventHandler(marker, UIEventType.click, (JSObject obj) -> {
                         info.open(map);
-                        chartDisplay(getGarageArea(name));
                         try {
                             DirectionsRequest dr = new DirectionsRequest(
                                     coordinatesToAddress(ipLocation.latitude, ipLocation.longitude),
                                     coordinatesToAddress(latitude.floatValue(), longitude.floatValue()),
-                                    TravelModes.DRIVING, dw);
+                                    TravelModes.DRIVING);
                             ds.getRoute(dr, this, renderer);
                         } catch (IOException | ParseException e) {
                             e.printStackTrace();
@@ -256,10 +245,24 @@ public class Map implements MapComponentInitializedListener, DirectionsServiceCa
         return null;
     }
 
+    public Double getIndex(String garageName, int year) {
+        ResultSet results1 = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "select * from beschadiging_aan_auto WHERE Gebied='" + getGarageArea(garageName) + "'");
+        ResultSet results2 = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "select * from diefstal_uit_auto WHERE Gebied='" + getGarageArea(garageName) + "'");
+        try {
+            while (results1.next() && results2.next()) {
+                if(year == 2011) { year = 2010; }
+                System.out.println(results2.getString(year - 2006 + 2).replace(",","."));
+                return Double.parseDouble(results1.getString(year - 2006 + 2).replace(",",".")) + Double.parseDouble(results2.getString(year - 2006 + 2).replace(",","."));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
+    }
+
     //Displays the correct piechart for the area in a subview
     public void chartDisplay(String areaName) {
         VBox subScene = new VBox();
-        System.out.println(areaName);
         Button closeButton = new Button();
         closeButton.setText("X");
         closeButton.setOnAction(new EventHandler<ActionEvent>() {

@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class PieChartX {
 
     //Draws the Pie Chart scene
-    static VBox getScene(ChartInfo chartInfo) {
+    static VBox getScene(ChartInfo chartInfo, Boolean splitScreen) {
         VBox sceneView = new VBox();
         sceneView.setPadding(new Insets(10,10,10,10));
 
@@ -43,15 +43,32 @@ public class PieChartX {
         } catch (SQLException | NullPointerException e) {
             e.printStackTrace();
         }
-
-        pickAreaComboBox.setOnAction((q) -> {
-            chartInfo.setRangeSelector(pickAreaComboBox.getSelectionModel().getSelectedItem().toString());
-            if (Main.openInNewWindow) {
-                Main.pieChartScene.setRoot(getScene(chartInfo));
-            } else {
-                Main.borderPane.setCenter(getScene(chartInfo));
-            }
-        });
+        if(splitScreen) {
+            pickAreaComboBox.setOnAction((q) -> {
+                ChartInfo oldChartInfo = new ChartInfo(chartInfo.getDbURL(), chartInfo.getDbUsername(), chartInfo.getDbPassword(), chartInfo.getDbQuery(), chartInfo.getRangeSelector());
+                chartInfo.setRangeSelector(pickAreaComboBox.getSelectionModel().getSelectedItem().toString());
+                VBox vbox = new VBox();
+                Text text = new Text();
+                text.setText("Compare the piecharts here.");
+                text.setFont(Font.font("null", FontWeight.MEDIUM, 40));
+                text.setWrappingWidth(Main.scene.getWidth());
+                vbox.getChildren().addAll(text, PieChartX.getScene(chartInfo, true), PieChartX.getScene(oldChartInfo, true));
+                if (Main.openInNewWindow) {
+                    Main.pieChart2Scene.setRoot(vbox);
+                } else {
+                    Main.borderPane.setCenter(vbox);
+                }
+            });
+        } else {
+            pickAreaComboBox.setOnAction((q) -> {
+                chartInfo.setRangeSelector(pickAreaComboBox.getSelectionModel().getSelectedItem().toString());
+                if (Main.openInNewWindow) {
+                    Main.pieChartScene.setRoot(getScene(chartInfo, false));
+                } else {
+                    Main.borderPane.setCenter(getScene(chartInfo, false));
+                }
+            });
+        }
         pickAreaComboBox.setValue(chartInfo.getRangeSelector());
 
         VBox subScene = getSubScene(resultSet, pieChart, chartInfo);
@@ -102,7 +119,7 @@ public class PieChartX {
         String areaSafeName = null;
         if (areaName.contains(" ")) { areaSafeName = "{" + areaName + "}"; }
         else { areaSafeName = areaName; }
-        ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/Crime_per_area", "root", "root", "select Crime, " + areaSafeName + " from all_crimes_transposed");
+        ResultSet results = SQL.getDBResults("jdbc:mysql://127.0.0.1:3306/" + Main.DatabaseName, "root", "root", "select Crime, " + areaSafeName + " from all_crimes_transposed");
 
         try {
             while (results.next()) {
