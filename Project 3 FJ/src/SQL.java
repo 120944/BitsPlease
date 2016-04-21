@@ -24,4 +24,8 @@ public class SQL {
         }
         return null;
     }
+
+    public static ResultSet getChartData(ChartInfo chartInfo) {
+        return SQL.getDBResults(chartInfo.getDbURL(),chartInfo.getDbUsername(),chartInfo.getDbPassword(),chartInfo.getDbQuery());
+    }
 }
