@@ -8,11 +8,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 public class MapChart1 {
     //Draws the Map-scene
     public static VBox getScene() {
         Map.mapViewVBox = new VBox(8);
+        Text text = new Text();
+        text.setText("Click on a garage to get directions and statistics.");
+        text.setFont(Font.font("null", FontWeight.MEDIUM, 20));
+        text.setWrappingWidth(Main.scene.getWidth());
         Map.map();
 
         if(Main.staticMap) {
@@ -59,7 +66,7 @@ public class MapChart1 {
             Map.mapView.addMapInializedListener(new Map());
             Map.mapView.setPrefSize(Main.width, Main.height);
             Map.mapViewVBox.setAlignment(Pos.CENTER);
-            Map.mapViewVBox.getChildren().addAll(Map.mapView);
+            Map.mapViewVBox.getChildren().addAll(text, Map.mapView);
         }
 
         //Listeners for screen resize events

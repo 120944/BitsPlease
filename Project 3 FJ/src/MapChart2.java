@@ -9,6 +9,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 public class MapChart2 {
     //Draws the Map-scene
@@ -21,6 +24,12 @@ public class MapChart2 {
     public static VBox getScene(String yearString) {
         int year = Integer.parseInt(yearString);
         ComboBox<String> pickYearComboBox = new ComboBox<>();
+
+        Text text = new Text();
+        text.setText("Heatmap: the circles are representive for car-related crimes");
+        text.setFont(Font.font("null", FontWeight.MEDIUM, 20));
+        text.setWrappingWidth(Main.scene.getWidth());
+
         pickYearComboBox.setPromptText("Select a year");
         pickYearComboBox.setEditable(false);
         pickYearComboBox.setValue(year + "");
@@ -87,7 +96,7 @@ public class MapChart2 {
             Map2.mapView.addMapInializedListener(new Map2());
             Map2.mapView.setPrefSize(Main.width, Main.height);
             Map2.mapViewVBox.setAlignment(Pos.CENTER);
-            Map2.mapViewVBox.getChildren().addAll(pickYearComboBox, Map2.mapView);
+            Map2.mapViewVBox.getChildren().addAll(text, pickYearComboBox, Map2.mapView);
         }
 
         //Listeners for screen resize events
